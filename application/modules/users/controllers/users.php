@@ -6,7 +6,7 @@ class Users extends MX_Controller
 	function index()
 	{
 		$this->login();
-		// $this->load->model('m_user');
+		//$this->load->model('m_user');
 	}
 
 	function mainpage()
@@ -30,6 +30,7 @@ class Users extends MX_Controller
 		}
 		else
 		{
+			$this->load->model('m_user');
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 
@@ -37,6 +38,7 @@ class Users extends MX_Controller
 
 			if (!$user_id) {
 				//Log In Failed
+				echo "Wrong username or password";
 			}
 
 			else

@@ -15,7 +15,7 @@
 	</head>
 
 	<body>
-		<form class = "well" method = "POST" action = "users/login">
+		<form class = "well" method = "POST" action = "login">
 			<input name = "username" type = "text" title = "Enter your User Name Here" placeholder = "User Name Here" required/><br/>
 			<input name = "password" type = "Password" title = "Enter your Password Here" required/>
 			<br/>

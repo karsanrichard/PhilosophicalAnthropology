@@ -15,6 +15,7 @@ class M_user extends CI_Model {
 
         $results = $this->db->query($sql, array($username, $sha1_password));
 
+
         if ($results->num_rows() == 1)
         {    
             return $results->row(0)->userid;
