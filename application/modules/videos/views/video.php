@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<meta name = 'viewport' content = "width=device-width, initial-scale = 1">
 		<title>PHILOSOPHICAL ANTHROPOLOGY</title>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap-theme.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/video.css">
-		<script type="text/javascript" src = "<?php echo base_url(); ?>/assets/bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src = "<?php echo base_url(); ?>/assets/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src = "<?php echo base_url(); ?>/assets/js/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/Flat-UI/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/Flat-UI/css/flat-ui.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/video.css">
+		<script type="text/javascript" src = "<?php echo base_url(); ?>assets/js/jquery.js"></script>
+		<script type="text/javascript" src = "<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src = "<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+
+		<script src="<?php echo base_url(); ?>assets/mediaelement/build/mediaelement-and-player.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/mediaelement/testforfiles.js"></script>	
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/mediaelement/build/mediaelementplayer.min.css" />   
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/mediaelement/build/mejs-skins.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/semantic/packaged/css/semantic.css">
 	</head>
-	<body>
+	<body class = "menu">
 		<!-- Navigation Bar -->
 		<nav class = "navbar navbar-default" role = "navigation">
 			<div class = "container-fluid">
@@ -44,19 +49,189 @@
 			</div>
 		</nav>
 		<!--End of Navigation Bar-->
-
+		<div class = " videocontainer container-fluid">
 		<!-- video section -->
-		<div class = "video-container">
-			<video controls>
-				<source src = "<?php echo base_url()?>/assets/uploaded/videos/summer.mp4"/>
+		<div class = "video col-md-8" style="">
+			<video width="820" height="430"  type="video/mp4" id="player1" controls="controls" preload="none" class="mejs-myskin">
+				<source src = "<?php echo base_url()?>/assets/uploaded/videos/arsenal.mp4"/>
 			</video>
-			<div class = "video-controls">
-
-			<a id = "play-pause">Play</a>
-			<input id = "seekslider" type = "range" min = "0" max = "100" value = "0" step = "1"/>
-			<a id = "volume-toggle">Volume</a>
-			<a id = "toggle-screen">[]</a>
-			</div>
+			<div class="ui segment">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<div class="ui fitted divider"></div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
+			<div class="ui threaded comments comm">
+  <div class="comment">
+    <a class="avatar">
+      <img src="/images/demo/avatar.jpg">
+    </a>
+    <div class="content">
+      <a class="author">Dog Doggington</a>
+      <div class="metadata">
+        <span class="date">2 days ago</span>
+      </div>
+      <div class="text">
+        I think this is a great idea and i am voting on it
+      </div>
+      <div class="actions">
+        <a class="reply">Reply</a>
+        <a class="delete">Delete</a>
+      </div>
+    </div>
+    <div class="comments">
+      <div class="comment">
+        <a class="avatar">
+          <img src="/images/demo/avatar2.jpg">
+        </a>
+        <div class="content">
+          <a class="author">Pawfin Dog</a>
+          <div class="metadata">
+            <span class="date">1 day ago</span>
+          </div>
+          <div class="text">
+            I think this is a great idea and i am voting on it
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="delete">Delete</a>
+          </div>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <a class="avatar">
+              <img src="/images/demo/avatar.jpg">
+            </a>
+            <div class="content">
+              <a class="author">Dog Doggington</a>
+              <div class="metadata">
+                <span class="date">20 minutes ago</span>
+              </div>
+              <div class="text">
+                I think this is a great idea and i am voting on it
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+                <a class="delete">Delete</a>
+              </div>
+            </div>
+          </div>
+          <div class="comment">
+            <a class="avatar">
+              <img src="/images/demo/avatar.jpg">
+            </a>
+            <div class="content">
+              <a class="author">Dog Doggington</a>
+              <div class="metadata">
+                <span class="date">20 minutes ago</span>
+              </div>
+              <div class="text">
+                Also pizza.
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+                <a class="delete">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comment">
+        <a class="avatar">
+          <img src="/images/demo/avatar.jpg">
+        </a>
+        <div class="content">
+          <a class="author">Dog Doggington</a>
+          <div class="metadata">
+            <span class="date">2 days ago</span>
+          </div>
+          <div class="text">
+            I think this is a great idea and i am voting on it
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="delete">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="comment">
+    <a class="avatar">
+      <img src="/images/demo/avatar.jpg">
+    </a>
+    <div class="content">
+      <a class="author">Dog Doggington</a>
+      <div class="metadata">
+        <span class="date">20 hours ago</span>
+      </div>
+      <div class="text">
+        I think this is a great idea and i am voting on it
+      </div>
+      <div class="actions">
+        <a class="reply">Reply</a>
+      </div>
+    </div>
+  </div>
+  <div class="comment">
+    <a class="avatar">
+      <img src="/images/demo/avatar2.jpg">
+    </a>
+    <div class="content">
+      <a class="author">Pawfin Dog</a>
+      <div class="metadata">
+        <span class="date">15 hours ago</span>
+      </div>
+      <div class="text">
+        I think this is a great idea and i am voting on it
+      </div>
+      <div class="actions">
+        <a class="reply">Reply</a>
+      </div>
+    </div>
+  </div>
+</div>
 		</div>
+
+		<aside class = "side col-md-3" style="">
+			<div class="videothumb col-md-8">
+		    	<a href="#" class="thumbnail" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+		      	<img src="<?php echo base_url()?>/assets/images/video.jpg" alt="...">
+		    	</a>
+	  		</div>
+
+	  		<div class="videothumb col-md-8">
+		    	<a href="#" class="thumbnail">
+		      	<img src="<?php echo base_url()?>/assets/images/video.jpg" alt="...">
+		    	</a>
+	  		</div>
+
+	  		<div class="videothumb col-md-8">
+		    	<a href="#" class="thumbnail">
+		      	<img src="<?php echo base_url()?>/assets/images/video.jpg" alt="...">
+		    	</a>
+	  		</div>
+
+	  		<div class="videothumb col-md-8">
+		    	<a href="#" class="thumbnail">
+		      	<img src="<?php echo base_url()?>/assets/images/video.jpg" alt="...">
+		    	</a>
+	  		</div>
+		</aside>
+		</div>
+<script>
+$('audio,video').mediaelementplayer({
+	success: function(player, node) {
+		$('#' + node.id + '-mode').html('mode: ' + player.pluginType);
+	}
+});
+
+</script>
+		<script src="<?php echo base_url(). 'assets/Flat-UI/js/jquery-1.8.3.min.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/jquery-ui-1.10.3.custom.min.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/jquery.ui.touch-punch.min.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/bootstrap.min.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/bootstrap-select.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/bootstrap-switch.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/flatui-checkbox.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/flatui-radio.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/jquery.tagsinput.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/Flat-UI/js/jquery.placeholder.js'?>"></script>
+	    <script src="<?php echo base_url(). 'assets/semantic/packaged/javascript/semantic.js'?>"></script>
 	</body>
 </html>
