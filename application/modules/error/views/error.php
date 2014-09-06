@@ -1,5 +1,6 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap.css">
-<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/Flat-UI/css/flat-ui.css">
 <link rel="stylesheet" href="<?php echo base_url();?>assets/semantic/packaged/css/semantic.css">
 <div class="jumbotron" id = "home-div">
 	<div class = "row">
