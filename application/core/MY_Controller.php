@@ -1,5 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+// error_reporting(1);
+
 class MY_Controller extends MX_Controller
 {
 	function __construct()
