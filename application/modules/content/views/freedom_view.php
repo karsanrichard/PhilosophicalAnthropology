@@ -15,15 +15,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/mediaelement/build/mejs-skins.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/semantic/packaged/css/semantic.css">-->
 		<style type="text/css">
-			#content {
-				width: 700px;
-				border: solid;
-			}
-			#aside {
-				float: right;
-				width: 300px;
-				border: solid;
-			}
+			
 		</style>
 	</head>
 	<body>
