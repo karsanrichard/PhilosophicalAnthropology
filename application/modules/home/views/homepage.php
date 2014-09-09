@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-<meta name="author" content="Richard Seth Karsan|Medianover.com">
+<meta name="author" content="Richard Seth Karsan|Joshua Bakasa|Chrispine Otaalo ">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate.css">
@@ -23,24 +22,27 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Human Freedom</a></li>
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Human Sexuality</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
     <li role="presentation" class="divider"></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Relation</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Human Freedom</a></li>
   </ul>
 </div>
 </div>
 
 </div>
 
-<div id="login" class="login animated fadeOutUp">
+<div id="login" class="login animated display-none ">
 	<input type="text" class="form-control float-left" name="username" placeholder="Username/Email"> 
 	<input type="password" class="form-control float-left" name="pwd" placeholder = "Password">
-     <button class="btn btn-default" type="button">Login</button>
+     <button class="btn btn-default" id="member_login" type="button">Login</button>
+     <button class = "btn btn-default login_submit" id="member_register" type="button" data-toggle="modal" data-target="#myModal">Register</button>
 </div>
 
+
+
 </div>
+
+
 <div id="site-content" class="clearfix">
 	<div id="menu" class="menu-custom" onclick="scrollDown()">
 		<ul class="nav nav-pills" role="tablist">
@@ -59,7 +61,14 @@
 	</div>
 	
 	<div class="tab-pane fade clearfix" id="contact">
-		<input type="email" class="">
+		<div class="contact-tab">
+		<input type="text" class="form-control float-left" name="username" placeholder="Username/Email"> 
+		<input type="password" class="form-control float-left" name="pwd" placeholder = "Password">
+		<input type="email" class="" placeholder="Enter your email adress here">
+		<input type="text">
+		<textarea class="" placeholder="Enter your message here"></textarea>
+			
+		</div>
 	</div>
 	
 	<div class="tab-pane fade clearfix" id="portfolio">
@@ -71,78 +80,7 @@
 	</div>
 	
 	<div class="tab-pane fade clearfix" id="about">
-	<div class="clearfix" id="about-content">
-		<div class="info-tabs clearfix">
-			<div class="info-tab-content ">
-			<img src="<?php echo base_url() ?>assets/img/portrait-1.jpg">
-			<h2>John Chrispine Otaalo</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			</div>
-
-			<div class="info-tab-content ">
-			<img src="<?php echo base_url() ?>assets/img/portrait-2.jpg">
-			<h2>Karsan Richard Seth</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			</div>
-
-			<div class="info-tab-content ">
-			<img src="<?php echo base_url() ?>assets/img/portrait-4.jpg">
-			<h2>Bakasa Joshua</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			</div>
-
-			<div class="convo">
-				<div id="convo-1">
-				<img src="<?php echo base_url() ?>assets/img/portrait-1.jpg">
-					<h3>John Chrispine Otaalo</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
-
-				<div id="convo-2">
-				<img src="<?php echo base_url() ?>assets/img/portrait-2.jpg">
-					<h3>Karsan Richard Seth</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
-
-				<div id="convo-3">
-			<img src="<?php echo base_url() ?>assets/img/portrait-4.jpg">
-
-					<h3>Bakasa Joshua</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	</div>
 	<!-- end of about div -->
 	</div>
@@ -152,9 +90,9 @@
 		
 	</div>
 	<footer>
-		<small>&copy;Richard Seth Karsan|John Chrispine Otaalo|Bakasa Joshua (2014) This template is owned solely by OUR GROUP and can not be used or redistributed without purchase</small>
+		<small>&copy;Richard Seth Karsan | John Chrispine Otaalo | Bakasa Joshua (2014) This template is owned solely by OUR GROUP and can not be used or redistributed without purchase</small>
 		<div class="back-to-top">
-			<button type="button" onclick="scrollUp()" id="login_button" class="btn btn-default"> Login <span class = "glyphicon glyphicon-user"></span></button>
+			<button type="button" onclick="scrollUp()" id="login_button" class="btn btn-default"> Login / Register <span class = "glyphicon glyphicon-user"></span></button>
 			<button type="button" onclick="scrollUp()" id="back-to-top" class="btn btn-default"> Back to Top <span class = "glyphicon glyphicon-hand-up"></span></button>
 		</div>
 	</footer>
@@ -163,10 +101,34 @@
 <!-- end of site content -->
 </div>
 <!-- end of container -->
+
+ <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Member Registration.</h4>
+		        <h5 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Step One: User Information.</h5>
+
+		      </div>
+		      <?php echo form_open('home/user_registration'); ?>
+		      <div>
+		      	<input type="text" class="form-control" name="user_name" placeholder="User Name">
+		      	<input type="password" class="form-control" name="pwd" placeholder="Password">
+		      	<input type="password" class="form-control" name="pwd_retype" placeholder="Re-type Password">
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-info">Register</button>
+		        <?php echo form_close(); ?>
+		      </div>
+		    </div>
+		  </div>
+</div>
+
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/modernizr.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/custom.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/home_custom.js"></script>
 </body>
-</html>

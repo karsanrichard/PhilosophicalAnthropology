@@ -38,7 +38,6 @@ a:hover{
 	background-color: rgba(173, 174, 178, 0.3);
 }
 .menu-custom a{
-
 	color: #F5F5F5;
 }
 .menu-custom li a:hover{
@@ -90,6 +89,9 @@ background-color: rgba(80, 179, 179, 0.4);
 .login input{
 	width: auto;
 	margin: 10px;
+}
+.display-none{
+	display: none;
 }
 /*END OF LOGIN*/
 .unstyled{
@@ -213,7 +215,7 @@ float: left;
 
 }
 
-.info-tabs{
+.info-tabs,.contact-tab{
 	margin:4.5% auto;
 	/*padding: 100px;*/
 	width: 100%;
@@ -250,6 +252,18 @@ float: left;
 	color: #585858;
 }
 
+/*contact form*/
+.contact-tab{
+	padding: 5%;
+	position: absolute;
+}
+
+.contact-tab input{
+	width: 500px;
+}
+ modal input{
+	width: 300px;
+}
 /*END OF TABS*/
 
 .back-to-top{
@@ -311,10 +325,23 @@ footer{
 	background-color: rgba(80, 179, 179, 0.5);
 	color: white;
 }
+.btn:active{
+	border-radius: 0px;
+	background-color: rgba(80, 179, 179, 0.5);
+	color: white;
+}
 .btn:hover{
 	border-radius: 0px;
 	background-color: rgba(80, 179, 179, 0.8);
 	color: #ffffff;
 	font-weight: inherit;
+}
+.modal{
+	background-color: rgba(80, 179, 179, 0.4);
+}
+.modal-content{
+	background-color: rgba(179, 179, 179, 0.6);
+	border:2px solid #000000;
+
 }
 /*CUSTOMISED BOOTSTRAP*/
