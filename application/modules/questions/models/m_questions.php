@@ -2,6 +2,8 @@
 
 class M_questions extends MY_Model {
 
+    public $sanitizedanswer;
+
     function __construct()
     {
         // Call the Model constructor
@@ -13,15 +15,27 @@ class M_questions extends MY_Model {
     {
         try
         {
-            $this->questions = $this->em->createQuery('SELECT q.questionCode, q.question,q.choices, q.answer FROM models\Entities\Questions q ORDER BY q.questionCode ASC');
+            $this->questions = $this->em->createQuery('SELECT q.questionCode, q.question,q.choices, q.answer, q.questionCategory FROM models\Entities\Questions q ORDER BY q.questionCode ASC');
             $this->questions = $this->questions->getResult();
-            print_r($this->questions);
+            echo json_encode($this->questions);
         }
         catch(exception $ex)
         {
             die($ex->getMessage());
+            return false;
         }
-    } 
+    }
+
+    function getSantizedAnswer()
+    {
+        $answers = $this->getAllQuestions();
+        foreach ($answers as $value) {
+            $this->sanitizedanswer[$value['questionCode']] = '';
+            $this->sanitizedanswer[$value['questionCode']] .= $value['answer'];
+        }
+
+        return $this->sanitizedanswer;
+    }
     function addQuestions()
     {
         $this->elements=array();
@@ -137,5 +151,108 @@ class M_questions extends MY_Model {
 
         // print_r($this->theForm);die;
 
+    }
+
+    function addAnswered()
+    {
+        $this->elements=array();
+        $answered = $this->input->post();
+        $user = $answered['useremail'];
+        // echo"<pre>";print_r($answered);die;
+        $count = $finalCount = 1;
+        foreach ($answered as $key => $val) {
+            if (strpos($key, 'answered') !== FALSE) {
+                $this->frags = explode("_", $key);
+                $this->id = $count;
+                $this->attr = $this->frags[0];
+                if ($this->attr == 'answeredquestionCode') {
+                    $finalCount = $count;
+                    $count++;
+                }
+
+                if (!empty($val)) {
+                    $this->elements[$this->id][$this->attr] = htmlentities($val);
+                }
+                else
+                {
+                    $this->elements[$this->id][$this->attr] = '';
+                }
+            }
+        }
+
+        // echo "<pre>";print_r($this->elements);die;
+        $this->noOfInsertsBatch = $finalCount;
+
+        for ($i=1; $i <= $this->noOfInsertsBatch; $i++) { 
+            $this->theForm = new \models\Entities\PublicAnswers();
+            
+            //go ahead and persist data posted
+
+            //create an object of the model
+
+            (array_key_exists('answeredquestionCode', $this->elements[$i])) ? $this->theForm->setQuestionCode($this->elements[$i]['answeredquestionCode']) : $this->theForm->setQuestionCode('n/a');
+            (array_key_exists('answeredfreedom', $this->elements[$i])) ? $this->theForm->setQuestionResponse($this->elements[$i]['answeredfreedom']) : $this->theForm->setQuestionResponse('n/a');
+            $this->theForm->setEmailaddress($user);
+            $this->theForm->setTime(new DateTime());
+
+            /*timestamp option*/
+            $this->em->persist($this->theForm);
+
+            //now do a batched insert, default at 5
+            $this->batchSize = 5;
+
+            if ($i % $this->batchSize == 0) {
+                try {
+
+                    $this->em->flush();
+                    $this->em->clear();
+
+                    //detaches all objects from doctrine
+                    //return true;
+
+                }
+                catch(Exception $ex) {
+
+                    die($ex->getMessage());
+                    return false;
+
+                    /*display user friendly message*/
+                }
+                 //end of catch
+
+
+            }
+            else if ($i < $this->batchSize || $i > $this->batchSize || $i == $this->noOfInsertsBatch && $this->noOfInsertsBatch - $i < $this->batchSize) {
+
+                //total records less than a batch, insert all of them
+                try {
+
+                    $this->em->flush();
+                    $this->em->clear();
+
+                    //detactes all objects from doctrine
+                    //return true;
+
+                }
+                catch(Exception $ex) {
+
+                    die($ex->getMessage());
+                    return false;
+
+                    /*display user friendly message*/
+                }
+                 //end of catch
+
+                //on the last record to be inserted, log the process and return true;
+                if ($i == $this->noOfInsertsBatch) {
+
+                    //die(print $i);
+                    // $this->writeAssessmentTrackerLog();
+                    return true;
+                }
+            }
+
+            //end of batch condition
+        }
     }
 }
