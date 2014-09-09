@@ -14,13 +14,14 @@
 	<div class="reg-form">
 		        <h4 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Member Registration</h4>
 		      <?php echo form_open('home/member_registration'); ?>
-
-		      	<input type="text" class="form-control" name="fname" placeholder="First Name">
-		      	<input type="text" class="form-control" name="sname" placeholder="Second Name">
-		      	<input type="date" class="form-control" name="dob" placeholder="Date of Birth">
-		      	<input type="text" class="form-control" name="email" placeholder="E-mail">
-		      	<input type="password" class="form-control" name="pwd" placeholder="Password">
-		      	<input type="password" class="form-control" name="pwd_retype" placeholder="Re-type Password">
+		      	<div class="input-names">
+			      	<input type="text" class="inputs" name="fname" placeholder="First Name">
+			      	<input type="text" class="inputs" name="sname" placeholder="Second Name">
+		      	</div>
+		      	<input type="date" class="inputs" name="dob" placeholder="Date of Birth">
+		      	<input type="text" class="inputs" name="email" placeholder="E-mail">
+		      	<input type="password" class="inputs" name="pwd" placeholder="Password">
+		      	<input type="password" class="inputs" name="pwd_retype" placeholder="Re-type Password">
 		      	<input type="text" class="form-control" name="occupation" placeholder="Occupation/Proffesion">
 
 		      <div class="modal-footer">

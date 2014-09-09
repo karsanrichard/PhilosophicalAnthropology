@@ -65,10 +65,7 @@ a:hover{
 	width: auto;
 	display: inline-block;
 }
-.float-left{
-	float: left;
 
-}
 /*END OF MENU*/
 
 /*LOGIN*/
@@ -90,9 +87,7 @@ background-color: rgba(80, 179, 179, 0.4);
 	width: auto;
 	margin: 10px;
 }
-.display-none{
-	display: none;
-}
+
 /*END OF LOGIN*/
 .unstyled{
 	list-style: none;
@@ -261,11 +256,45 @@ float: left;
 .contact-tab input{
 	width: 500px;
 }
- modal input{
-	width: 300px;
+ .modal input{
+	width: auto;
 }
+
 /*END OF TABS*/
 
+/*GENERAL STYLING CLASSES*/
+.float-left{
+	float: left;
+
+}
+.display-none{
+	display: none;
+}
+
+.clear{
+	clear: both;
+}
+
+.inputs{
+	border:none;
+	border-radius: 0;
+	background-color: #E6E6E6;
+	outline-offset: 0px;
+	box-shadow: 0;
+	height: 30px;
+	color: #000000;
+	padding: 5px
+	}
+
+::-webkit-input-placeholder {
+   color: #424242;
+}
+
+
+
+
+
+/*END OF GENERAL STYLING CLASSES*/
 .back-to-top{
 	bottom: 20px;
 	right: 0;
@@ -283,6 +312,27 @@ footer{
 	width: 100%;
 	text-align: center;
 }
+
+
+/*
+===========================
++++++++++++++++++++++++++++
+MEMBER REGISTRATION STYLING
++++++++++++++++++++++++++++
+===========================
+*/
+
+
+
+
+
+/*
+===========================
++++++++++++++++++++++++++++
+end of MEMBER REGISTRATION STYLING
++++++++++++++++++++++++++++
+===========================
+*/
 
 /*CLEARFIX*/
 .clearfix:after {

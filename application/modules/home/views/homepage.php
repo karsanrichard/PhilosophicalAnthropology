@@ -62,7 +62,7 @@
 	
 	<div class="tab-pane fade clearfix" id="contact">
 		<div class="contact-tab">
-		<input type="text" class="form-control float-left" name="username" placeholder="Username/Email"> 
+		<input type="text" class="form-control  float-left" name="username" placeholder="Username/Email"> 
 		<input type="password" class="form-control float-left" name="pwd" placeholder = "Password">
 		<input type="email" class="" placeholder="Enter your email adress here">
 		<input type="text">
@@ -112,14 +112,14 @@
 
 		      </div>
 		      <?php echo form_open('home/user_registration'); ?>
-		      <div>
-		      	<input type="text" class="form-control" name="user_name" placeholder="User Name">
-		      	<input type="password" class="form-control" name="pwd" placeholder="Password">
-		      	<input type="password" class="form-control" name="pwd_retype" placeholder="Re-type Password">
+		      <div class="clearfix">
+		      	<input type="text" class="form-control float-left" name="user_name" placeholder="User Name">
+		      	<input type="password" class="form-control float-left" name="pwd" placeholder="Password"></br>
+		      	<input type="password" class="form-control float-left" name="pwd_retype" placeholder="Re-type Password">
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-		        <button type="submit" class="btn btn-info">Register</button>
+		        <button type="button" class="clear btn btn-danger" data-dismiss="modal">Close</button>
+		        <button type="submit" class="clear btn btn-info">Register</button>
 		        <?php echo form_close(); ?>
 		      </div>
 		    </div>
