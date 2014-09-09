@@ -11,11 +11,7 @@ class Content extends MY_Controller
 		parent::__construct();
 	}
 
-	public function index()
-	{
-		$this->human_freedom();
-	}
-
+	
 	public function human_freedom()
 	{
 		$this->load->view("freedom_view");
