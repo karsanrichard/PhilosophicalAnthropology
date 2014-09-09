@@ -14,13 +14,16 @@ class Admin extends MY_Controller
 
 	public function index()
 	{
-		$this->load->view('instructors_view');
+		$this->instructors();
+
 	}
 	
 	public function instructors()
 	{
-		$data['instructors'] = $this->admin_model->get_instructors;
 		
+		$data['instructors'] = $this->admin_model->get_instructors();
+		$this->load->view('instructors_view', $data);
+
 	}
 
 	public function add_instructor()

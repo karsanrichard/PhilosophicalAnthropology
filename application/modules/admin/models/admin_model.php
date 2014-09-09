@@ -13,7 +13,18 @@ class Admin_model extends MY_Model
 
 	public function get_instructors()
 	{
-		
+		$sql = "SELECT
+						`first_name`,
+						`second_name`,
+						`institution`,
+						`location`,
+						`email`,
+						`phone`,
+						`status`
+				FROM 
+					`instructors`";
+		$instructors = $this->db->query($sql);
+		return $instructors->result();
 	}
 }
 ?>

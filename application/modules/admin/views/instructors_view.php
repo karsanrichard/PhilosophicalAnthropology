@@ -59,6 +59,66 @@
 				</div>
 			</div>
 
+			<div>
+				<?php 
+					// print_r($instructors); die();
+					if ($instructors != NULL) {
+				?>
+					<div>
+						<table>
+							<thead>
+								<tr>
+									<td rowspan="2">#</td>
+									<td rowspan="2">First Name</td>
+									<td rowspan="2">Second Name</td>
+									<td rowspan="2">Institution</td>
+									<td rowspan="2">Location</td>
+									<td rowspan="2">Email</td>
+									<td rowspan="2">Telephone</td>
+									<td colspan="2">Actions</td>
+								</tr>
+								<tr>
+									<td>Status</td>
+									<td>Edit</td>
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+				<?php 
+					} else {
+				?>
+					<div>
+						<table>
+							<thead>
+								<tr>
+									<td rowspan="2">#</td>
+									<td rowspan="2">First Name</td>
+									<td rowspan="2">Second Name</td>
+									<td rowspan="2">Institution</td>
+									<td rowspan="2">Location</td>
+									<td rowspan="2">Email</td>
+									<td rowspan="2">Telephone</td>
+									<td colspan="2">Actions</td>
+								</tr>
+								<tr>
+									<td>Status</td>
+									<td>Edit</td>
+								</tr>
+							</thead>
+							<tbody>
+								<td colspan="9"><center> No data available in this table...</center></td>
+							</tbody>
+						</table>
+					</div>
+				<?php		
+					}
+				?>	
+				
+				
+			</div>
 
 <div class="modal fade" id="addinstructor">
 	<div class="modal-dialog" style="width:60%;margin-bottom:2px;">
@@ -70,51 +130,68 @@
 			<div class="modal-body" style="padding-bottom:0px;">	
 				<?php echo form_open(base_url().'admin/add_instructor') ?>
 						<div>
+
 							<table cellpadding="4px" cellspacing="4px">
 								<tr>
-								<div>
-									<td><span>First Name: </span></td>
-									<td><input type="text" name="first_name" id="first_name" required/></td>
-								</div>
-								<div>
-									<td><span>Second Name: </span></td>
-									<td><input type="text" name="second_name" id="second_name" required/></td>
-								</div>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon" >First Name:</span>
+										<input class="form-control" type="text" name="first_name" id="first_name" required/>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon">Second Name: </span>
+										<input class="form-control" type="text" name="second_name" id="second_name" required/>
+									</div>
+								</td>
 								</tr>
 								<tr>
-								<div>
-									<td><span>Other Name: </span></td>
-									<td><input type="text" name="other_name" id="other_name" required/></td>
-								</div>
-								<div>
-									<td><span>Date of Birth: </span></td>
-									<td><input type="date" name="DOB" id="DOB" required/></td>
-								</div>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon">Other Name: </span>
+										<input class="form-control" type="text" name="other_name" id="other_name" required/>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon">Date of Birth: </span>
+										<input class="form-control" type="date" name="DOB" id="DOB" required/>
+									</div>
+								</td>
 								</tr>
 								<tr>
-								<div>
-									<td><span>Institution: </span></td>
-									<td><input type="text" name="institution" id="institution" required/></td>
-								</div>
-								<div>
-									<td><span>Location: </span></td>
-									<td><input type="text" name="location" id="location" required/></td>
-								</div>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon">Institution: </span>
+										<input class="form-control" type="text" name="institution" id="institution" required/>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon">Location: </span>
+										<input class="form-control" type="text" name="location" id="location" required/>
+									</div>
+								</td>
 								</tr>
 								<tr>
-								<div>
-									<td><span>Email: </span></td>
-									<td><input type="text" name="email" id="email" required/></td>
-								</div>
-								<div>
-									<td><span>Phone Number: </span></td>
-									<td><input type="text" name="phone" id="phone" required/></td>
-								</div>
+								<td>
+									<div class="input-group" style="color: green;">
+										<span class="input-group-addon" >Email: </span>
+										<input class="form-control" type="text" name="email" id="email" required/>
+									</div>
+								</td>
+								<td>
+									<div class="input-group">
+										<span class="input-group-addon">Phone Number: </span>
+										<input class="form-control" type="text" name="phone" id="phone" required/>
+									</div>
+								</td>
 								</tr>
 								<tr>
 									<td colspan="4">
 										<div style="">
-											<input type="submit" name="save" value="Save User"  required/>
+											<button type="submit" class="btn btn-default"> Save User</button>
 										</div>
 									</td>
 								</tr>
