@@ -19,7 +19,7 @@ class Registration extends CI_Model {
         $user_name =  $_POST['user_name'];
         $pwd =  $_POST['pwd'];
 
-        $user_data=array('user_name' =>$user_name,'pwd' => $pwd);
+        $user_data=array('user_name' =>$user_name,'pwd' => $pwd,'email' => $email);
         array_push($user_info,$user_data);
 
         $this -> db -> insert_batch('users', $user_info);
@@ -32,21 +32,61 @@ class Registration extends CI_Model {
         $result = $this -> db -> insert_batch('members', $mem_data);
 
         if($result = TRUE){
-        $user_name = $fname.' '.$sname;
+        $full_name = $fname.' '.$sname;
+        $login_msg = 'You are logged in as: '.$user_name;
+        //echo $login_msg;exit;
         $user_email = $email;
             $newdata = array(
                    'username'  => $user_name,
                    'email'     => $user_email,
-                   'logged_in' => TRUE
+                   'login_status' => 'TRUE',
+                   'user_data' => $user_name,
+                   'login_info' => $login_msg
+
                );
 
         $this->session->set_userdata($newdata);
         
         }else{
-            echo "FOR WHO?";exit;
+            echo "REGISTER FOR WHO?";exit;
         };
+
+        redirect('home/index');
         /*
         
         */
     }
+
+    function verification(){
+       $username = $_POST['username'];
+       $password = $_POST['password'];
+
+        $user_table = array();
+        $u_table = $this->db->get('users');
+
+        $results = $u_table->result_array();
+ 
+        foreach ($results as $user_details) {
+            if(($user_details['email'] == $username )|| ($user_details['user_name'] == $username))
+            {
+                if ($user_details['pwd'] == $password) {
+                    echo "SUCESSFUL LOGIN";
+                    $login_status = array(
+                        'login_status' => 'TRUE',
+                        'user_data' => $username,
+                        'login_info' => 'Logged in as: '. $username
+                        );
+                    $this->session->set_userdata($login_status);
+                    redirect('home/index');
+                }
+                else {
+                    echo "PASSWORD WRONG";
+                    break;
+                }
+            }
+        //echo "<pre>";print_r($user_details);echo "</pre>";
+           
+        }
+    }
+
 }

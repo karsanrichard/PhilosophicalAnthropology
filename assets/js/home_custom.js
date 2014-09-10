@@ -29,6 +29,12 @@ $("#menu").click(function(){
 // #home,#contact,#portfolio,#history,#about
 $("#home,#contact,#portfolio,#history,#about,.reg-body").width(win_width);
 $("#home,#contact,#portfolio,#history,#about,.reg-body").height(win_height);
+
+$('.log_out').click(function(){
+	
+});
+
+
 });
 
 function scrollDown(){

@@ -1,11 +1,11 @@
-
+<?php //echo $login_info;exit; ?>
 <head>
 <meta name="author" content="Richard Seth Karsan|Joshua Bakasa|Chrispine Otaalo ">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/home-custom.css">
-	<title>Example Site</title>
+	<title>Human Sexuality & Freedom</title>
 </head>
 <body>
 <div id="container">
@@ -32,11 +32,13 @@
 </div>
 
 <div id="login" class="login animated display-none ">
+<?php echo form_open('home/login'); ?>
 	<input type="text" class="form-control float-left" name="username" placeholder="Username/Email"> 
-	<input type="password" class="form-control float-left" name="pwd" placeholder = "Password">
-     <button class="btn btn-default" id="member_login" type="button">Login</button>
+	<input type="password" class="form-control float-left" name="password" placeholder = "Password">
+     <button class="btn btn-default" id="member_login" type="submit">Login</button>
      <!-- <button class = "btn btn-default login_submit" id="member_register" type="button" data-toggle="modal" data-target="#myModal">Register</button> -->
      <a class = "btn btn-default login_submit" id="member_register" href="<?php echo base_url();?>home/reg_home">Register</a>
+<?php echo form_close();?>
 
 </div>
 
@@ -94,7 +96,20 @@
 	<footer>
 		<small>&copy;Richard Seth Karsan | John Chrispine Otaalo | Bakasa Joshua (2014) This template is owned solely by OUR GROUP and can not be used or redistributed without purchase</small>
 		<div class="back-to-top">
-			<button type="button" onclick="scrollUp()" id="login_button" class="btn btn-default"> Login / Register <span class = "glyphicon glyphicon-user"></span></button>
+		<button type="button" onclick="scrollUp()" id="logout_button" disabled = "disabled" class="btn btn-default"><?php echo $login_info; ?> <span class = "glyphicon glyphicon-thumbs-up"></span></button>
+		<?php 
+			if ($login_status == 'TRUE') {
+				echo '
+				<a " onclick="scrollUp()" id="logout_button" href = "'.base_url().'home/logout" class="btn btn-default log_out"> Log Out <span class = "glyphicon glyphicon-thumbs-down"></span></a>
+
+
+				';
+			}elseif($login_status =='FALSE'){
+				echo '
+				<button type="button" onclick="scrollUp()" id="login_button" class="btn btn-default"> Login / Register <span class = "glyphicon glyphicon-user"></span></button>
+				';
+			}
+		 ?>
 			<button type="button" onclick="scrollUp()" id="back-to-top" class="btn btn-default"> Back to Top <span class = "glyphicon glyphicon-hand-up"></span></button>
 		</div>
 	</footer>
