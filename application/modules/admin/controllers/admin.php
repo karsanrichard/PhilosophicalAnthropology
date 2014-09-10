@@ -55,13 +55,56 @@ class Admin extends MY_Controller
 			$this->instructors();
 				
 		}
-
-
-
-
-
 		//echo "Ndio kufika sasa";
 		// $this->load->view('instructors_view');
+	}
+
+	public function edit_instructor()
+	{
+		
+	}
+
+	public function email_details()
+	{
+		$recepient 	= $this->input->post('recipient');
+		$subject 	= $this->input->post('subject');
+		$message 	= $this->input->post('message');
+
+		$this->send_email($recepient, $subject, $message);
+	}
+
+	public function send_email($recepient, $subject, $message)
+	{
+		$time=date('Y-m-d');
+		
+		$config = array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_port' => 465,
+			'smtp_user' => "chrisrichrads@gmail.com",
+			'smtp_pass' => "joshuaSUN"
+			);
+		
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+
+		$this->email->from('chrisrichrads@gmail.com', 'PHILOSOPHICAL ANTHROPOLOGY');
+		$this->email->to($recepient);
+		$this->email->subject($subject);
+		$this->email->message($message);
+		$this->email->set_mailtype("html");
+		
+		
+		if($this->email->send())
+			{	
+				$this->admin_model->store_sent_email($recepient, $subject, $message, $time);
+				$this->index();
+				
+			} else 
+			{
+				show_error($this->email->print_debugger());
+			}
+		
 	}
 }
 
