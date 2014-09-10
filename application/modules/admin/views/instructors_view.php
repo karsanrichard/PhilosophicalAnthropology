@@ -145,7 +145,7 @@
 						} else {
 					?>
 						<div>
-							<table>
+							<table style="font-size:90%" id="" class="table table-bordered table-responsive">
 								<thead>
 									<tr>
 										<td rowspan="2">#</td>
@@ -240,6 +240,7 @@
 	    		<h5 class="modal-title">Edit Instructor</h5>
 	  		</div>
 			<div class="modal-body" style="padding-bottom:0px;">	
+			<?php echo form_open(base_url().'admin/edit_instructor'); ?>
 				<div class="input-group" style="width: 100%;padding:4px;">
 						<span class="input-group-addon" style="width: 40%;"> First Name:</span>
 						<input id="editfname" name="email" class="textfield form-control" />	
@@ -272,6 +273,7 @@
 				<div class="modal-footer" style="height:11px;padding-top:11px;">
 	      			<?php echo $this->config->item("copyrights");?>
 	      		</div> 
+	      	</form>
 	      	</div>
 		</div>
 	</div>

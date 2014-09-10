@@ -22,6 +22,7 @@ function runQuestions()
             xhr.overrideMimeType("text/plain; charset=x-user-defined");
         },
         success: function(data) {
+        	console.log(data);
             obj = jQuery.parseJSON(data);
             console.log(obj);
             smile(obj);
@@ -31,6 +32,7 @@ function runQuestions()
 
 function smile(data)
 {
+	console.log(data);
 	question_data = data;
 	test = _("test");
 	if (pos >= question_data.length)
