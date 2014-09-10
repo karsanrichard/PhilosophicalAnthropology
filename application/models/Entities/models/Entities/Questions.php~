@@ -205,4 +205,33 @@ class Questions
     {
         return $this->createdBy;
     }
+    /**
+     * @var string $questionCategory
+     *
+     * @ORM\Column(name="question_category", type="string", length=15, nullable=false)
+     */
+    private $questionCategory;
+
+
+    /**
+     * Set questionCategory
+     *
+     * @param string $questionCategory
+     * @return Questions
+     */
+    public function setQuestionCategory($questionCategory)
+    {
+        $this->questionCategory = $questionCategory;
+        return $this;
+    }
+
+    /**
+     * Get questionCategory
+     *
+     * @return string 
+     */
+    public function getQuestionCategory()
+    {
+        return $this->questionCategory;
+    }
 }

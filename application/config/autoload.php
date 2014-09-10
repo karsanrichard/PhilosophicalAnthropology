@@ -64,7 +64,11 @@ $autoload['libraries'] = array('session', 'doctrine', 'table', 'database', 'form
 |	$autoload['helper'] = array('url', 'file');
 */
 
+<<<<<<< HEAD
 $autoload['helper'] = array('url', 'form', 'file');
+=======
+$autoload['helper'] = array('url', 'form');
+>>>>>>> 3c4a0351691b8e1fc8010fd319d5bd8883323150
 
 
 /*

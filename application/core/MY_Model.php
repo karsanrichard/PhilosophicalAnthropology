@@ -30,7 +30,7 @@ class MY_Model extends CI_Model
         }
         catch(exception $ex) {
             
-            //ignor
+            //ignore
             die($ex->getMessage());
             
             

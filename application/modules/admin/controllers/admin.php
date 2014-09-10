@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php if (! defined("BASEPATH")) exit("No direct access script allowed");
 /**
 * 
@@ -65,3 +66,14 @@ class Admin extends MY_Controller
 }
 
 ?>
+=======
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Admin extends MX_Controller
+{
+	function index()
+	{
+		$this->load->view('admin_home');
+	}
+}
+>>>>>>> 3c4a0351691b8e1fc8010fd319d5bd8883323150
