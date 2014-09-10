@@ -1,0 +1,33 @@
+<!--
+ <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Member Registration.</h4>
+		        <h5 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Step One: User Information.</h5>
+
+		      </div>
+		      <?php //echo form_open('home/user_registration'); ?>
+		      <div class="clearfix margin">
+		      
+		      <div class="clear">
+		      	<input type="text" class="form-control float-left margin-bottom" name="user_name" placeholder="User Name">
+		      </div>
+
+		      <div class="clear margin-bottom">
+		      	<input type="password" class="form-control float-left margin-right" name="pwd" placeholder="Password">
+		      	<input type="password" class="form-control float-left" name="pwd_retype" placeholder="Re-type Password">
+		      </div>
+
+		      </div>
+
+		      <div class="modal-footer">
+		        <button type="button" class="clear btn btn-danger" data-dismiss="modal">Close</button>
+		        <button type="submit" class="clear btn btn-info">Register</button>
+		        <?php //echo form_close(); ?>
+		      </div>
+		    </div>
+		  </div>
+</div>
+-- >
