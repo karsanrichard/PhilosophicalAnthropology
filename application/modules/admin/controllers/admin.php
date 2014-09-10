@@ -1,9 +1,45 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class Admin extends MX_Controller
+<?php if (! defined("BASEPATH")) exit("No direct access script allowed");
+/**
+* 
+*/
+class Admin extends MY_Controller
 {
-	function index()
+	public $data = array();
+
+	function __construct()
 	{
-		$this->load->view('admin_home');
+		parent::__construct();
+		$this->load->model('admin_model');
+	}
+
+	public function index()
+	{
+		$this->instructors();
+
+	}
+	
+	public function instructors()
+	{
+		
+		$data['instructors'] = $this->admin_model->get_instructors();
+		$this->load->view('instructors_view', $data);
+
+	}
+
+	public function add_instructor()
+	{
+		$first 		  = $this->input->post('first_name');
+		$second 	  = $this->input->post('second_name');
+		$other 		  = $this->input->post('other_name');
+		$dob 		  = $this->input->post('DOB');
+		$institution  = $this->input->post('institution');
+		$location	  = $this->input->post('location');
+		$email 		  = $this->input->post('email');
+		$phone 		  = $this->input->post('phone');
+
+		//echo "Ndio kufika sasa";
+		// $this->load->view('instructors_view');
 	}
 }
+
+?>

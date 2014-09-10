@@ -1,0 +1,454 @@
+@font-face{
+
+}
+body{
+	width: 100%;
+	height: 100%;
+	font-family: Helvetica,Arial,sans-serif;
+	/*background-color: #EAE9FD;*/
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+#main-image{
+	height: 100%;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 5%;
+	position: fixed;
+	background-image: url("../images/img/plumage.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+#site-content{
+}
+/*MENU*/
+.menu-custom{
+	z-index: 100;
+	/*top: 90vh;*/
+	width: 100vw;
+	clear: both;
+	position: fixed;
+	background-color: rgba(173, 174, 178, 0.3);
+}
+.menu-custom a{
+	color: #F5F5F5;
+}
+.menu-custom li a:hover{
+	color: #696969;
+	background-color: white;
+}
+
+.menu li{
+	position: relative;
+	float: left;
+	height: auto;
+	/*padding: 3px;*/
+	/*border:1px solid #000000;*/
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	/*background-color: rgba(144, 143, 145, 0.2);*/
+}
+.menu a{
+	/*background-color: #FF0040;*/
+	float: left;
+	padding: 10px;
+}
+.float-right{
+	float: right;
+	width: auto;
+	display: inline-block;
+}
+
+/*END OF MENU*/
+
+/*LOGIN*/
+.login{
+width: 300px;
+padding: 30px;
+left: 0;
+float: left;
+background-color: rgba(80, 179, 179, 0.4);
+}
+.login button{
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: auto;
+	margin: 10px;
+}
+.login input{
+	width: auto;
+	margin: 10px;
+}
+
+/*END OF LOGIN*/
+.unstyled{
+	list-style: none;
+	text-decoration: none;
+}
+.main-image{
+
+}
+.active{
+	/*background-color: #B40431;*/
+}
+
+/*SLOGANS*/
+.slogan{
+	background-color: rgba(80, 91, 133, 0.5);
+	color: #ffffff;
+	width: 25%;
+	height: auto;
+	padding: 4%;
+	margin: 0px;
+	display: block;
+	text-align: center;
+	left: 70vw;
+	float: right;
+	position: absolute;
+
+}
+.slogan h1{
+	font-size: 3em;
+	color: #ffffff;
+	padding: 5px;
+	margin: 0;
+}
+.slogan-p{
+	font-size: 1em;
+	color: #ffffff;
+}
+#slogan-buttons{
+clear: both;
+width: 100%;
+padding: 10% 2% 0% 2%;
+text-align: center;
+float: left;
+}
+
+.slogan-buttons{
+	border:2px solid #D5D4F2;
+	padding: 4% 5%;
+	width: auto;
+	height: auto;
+	font-size: 1em;
+	color:#D5D4F2;
+	background-color: rgba(92, 93, 107, 0.2);
+}
+
+.slogan-buttons:hover{
+	border:2px solid #FAFAFA;
+	color:#ffffff;
+}
+#home,#contact,#portfolio,#history,#about{
+	/*height: 100vh;
+	width: 100vw;*/
+	background-color: white;
+}
+
+/*TABS*/
+.tabs-custom{
+	z-index: 99;
+	top: 100vh;
+	bottom: 0;
+	/*clear: both;*/
+	position: absolute;
+}
+#home{
+	/*background-color: red;*/
+	position: absolute;
+}
+#contact{
+	/*background-color: blue;*/
+	position: absolute;
+}
+#portfolio{
+	/*background-color: green;*/
+	position: absolute;
+}
+#history{
+	/*background-color: yellow;*/
+	position: absolute;
+}
+#about{
+	/*background-color: yellow;*/
+	position: absolute;
+}
+#about-content{
+
+}
+.convo{
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	background-color: #ffffff;
+}
+
+#convo-1,#convo-2,#convo-3{
+	width: 90%;
+	height: 15%;
+	clear: both;
+	margin: 3% auto 3% auto;
+	padding:2% 3%;
+	text-align: left;
+}
+
+#convo-1 img,#convo-2 img,#convo-3 img{
+	float: left;
+	margin: 0 20px;
+	border-top-left-radius: 150px;
+	border-top-right-radius: 150px;
+	border-bottom-left-radius: 150px;
+	border-bottom-right-radius: 0px;
+
+}
+
+.info-tabs,.contact-tab{
+	margin:4.5% auto;
+	/*padding: 100px;*/
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.info-tabs img{
+	height: 150px;
+	width: 150px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	margin: 7% 17%;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.info-tab-content{
+	float: left;
+	width: 22%;
+	border:2px solid #D8D8D8;
+	margin: 0 5%;
+	padding: 10px;
+	align:center;
+}
+
+.info-tab-content h2{
+	text-align: center;
+	color: #585858;
+}
+.info-tab-content p{
+	text-align: center;
+	color: #585858;
+}
+
+/*contact form*/
+.contact-tab{
+	padding: 5%;
+	position: absolute;
+}
+
+.contact-tab input{
+	width: 500px;
+}
+ .modal input{
+	width: auto;
+}
+
+/*END OF TABS*/
+
+.back-to-top{
+	bottom: 20px;
+	right: 0;
+	position: fixed;
+	z-index: 100;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	z-index: 99;
+	display: inline;
+	background-color: rgba(173, 174, 178, 0.3);
+	color: #ffffff;
+	width: 100%;
+	text-align: center;
+}
+
+
+/*
+===========================
++++++++++++++++++++++++++++
+MEMBER REGISTRATION STYLING
++++++++++++++++++++++++++++
+===========================
+*/
+
+.input-names{
+	
+
+}
+
+.reg-form{
+	padding: 0 10%;
+}
+
+.reg-body{
+	background-image:url("../images/img/woman.jpg"); 
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: center;
+}
+
+.reg-container{
+
+}
+
+.reg-form h4{
+	margin: 10px 10px 10px 0;
+	font-size: 2em;
+}
+/*
+===========================
++++++++++++++++++++++++++++
+end of MEMBER REGISTRATION STYLING
++++++++++++++++++++++++++++
+===========================
+*/
+
+/*GENERAL STYLING CLASSES*/
+.float-left{
+	float: left;
+}
+.display-none{
+	display: none;
+}
+
+.clear{
+	clear: both;
+}
+
+.margin{
+	margin: 10px;
+}
+
+.margin-bottom{
+	margin: 0 0 10px 0 ;
+}
+
+.margin-top{
+	margin: 0 10px 0 0 ;
+}
+
+.margin-left{
+	margin: 0 0 0 10px ;
+
+}
+.margin-right{
+	margin: 0 10px 0 0 ;
+
+}
+.inputs{
+	border:none;
+	border-radius: 0;
+	background-color: #E6E6E6;
+	outline-offset: 0px;
+	box-shadow: 0;
+	height: 30px;
+	color: #000000;
+	padding: 5px
+	}
+
+::-webkit-input-placeholder {
+   color: #424242;
+}
+
+
+
+
+
+/*END OF GENERAL STYLING CLASSES*/
+
+
+
+/*CLEARFIX*/
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/*CLEARFIX*/
+
+/*CUSTOMISED BOOTSTRAP*/
+.dropdown-menu{
+
+}
+
+.nav{
+	width: 100%;
+}
+.nav .active a{
+	border-radius: 0px;
+	
+}
+.nav a:hover{
+	border-radius: 0px;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #176A73;
+} 
+.btn{
+	border-radius: 0px;
+	background-color: rgba(80, 179, 179, 0.5);
+	color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{
+	outline: none;
+	background-color: rgba(90, 189, 189, 0.8);
+	color: #ffffff;
+}
+
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active{
+	outline: none;
+	background-color: rgba(90, 189, 189, 0.7);
+	opacity: 1;
+	color: #ffffff;
+}
+.btn:active{
+	border-radius: 0px;
+	background-color: rgba(80, 179, 179, 0.5);
+	color: white;
+}
+.btn:hover{
+	border-radius: 0px;
+	background-color: rgba(80, 179, 179, 0.8);
+	color: #ffffff;
+	font-weight: inherit;
+}
+.modal{
+	background-color: rgba(80, 179, 179, 0.4);
+}
+.modal-content{
+	background-color: rgba(179, 179, 179, 0.6);
+	border:2px solid #000000;
+
+}
+/*CUSTOMISED BOOTSTRAP*/
