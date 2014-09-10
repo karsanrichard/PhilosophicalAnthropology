@@ -9,27 +9,37 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/home-custom.css">
 
 </head>
-<body>
-<div class="container">
+<body class="reg-body">
+<div class="container reg-container">
 	<div class="reg-form">
 		        <h4 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Member Registration</h4>
 		      <?php echo form_open('home/member_registration'); ?>
-		      	<div class="input-names">
-			      	<input type="text" class="inputs" name="fname" placeholder="First Name">
-			      	<input type="text" class="inputs" name="sname" placeholder="Second Name">
+		      	<div class="input-names clear margin-bottom">
+			      	<input type="text" required title = "Please enter first name" class="inputs" name="fname" placeholder="First Name">
+			      	<input type="text" required title = "Please enter second name" class="inputs" name="sname" placeholder="Second Name">
+			      	<input type="text" title = "Please enter second name" class="inputs" name="onames" placeholder="Other Names">
 		      	</div>
-		      	<input type="date" class="inputs" name="dob" placeholder="Date of Birth">
-		      	<input type="text" class="inputs" name="email" placeholder="E-mail">
-		      	<input type="password" class="inputs" name="pwd" placeholder="Password">
-		      	<input type="password" class="inputs" name="pwd_retype" placeholder="Re-type Password">
-		      	<input type="text" class="form-control" name="occupation" placeholder="Occupation/Proffesion">
+		      	<div class="clear margin-bottom">
+		      	<input type="text" required title = "Please enter email" class="inputs" name="email" placeholder="E-mail">
+		      	<input type="text" required title = "Please enter username" class="inputs" name="user_name" placeholder="User Name">
+		      	</div>
+
+		      	<div class="clear margin-bottom">
+		      	<input type="date" required title = "Please enter date of birth" class="inputs" name="dob" placeholder="Date of Birth">
+				
+				</div>
+
+		      	<div class="margin-bottom clear">
+		      	<input type="password" required title = "Enter password" class="inputs" name="pwd" placeholder="Password">
+		      	<input type="password" required title = "Re-enter password" class="inputs" name="pwd_retype" placeholder="Re-type Password">
+		      	</div>
 
 		      <div class="modal-footer">
+
 		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		        <button type="submit" class="btn btn-info">Register</button>
 		        <?php echo form_close(); ?>
 		      </div>
-	</div>
 </div>
 
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.js"></script>

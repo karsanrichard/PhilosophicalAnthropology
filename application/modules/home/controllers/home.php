@@ -2,35 +2,29 @@
 
 class Home extends MX_Controller
 {
+	function __construct() {
+		parent::__construct();
+		$this -> load -> model('registration');
+		$this -> load -> helper(array('form', 'url'));
+		$this -> load -> database();
+	}
 
 	function index()
 	{
+		$sess_data = $this->session->all_userdata();
+		$session_id = $this->session->userdata('session_id');
+		echo $session_id."</br></br>";
+
+		// echo "<pre>"; print_r($sess_data);echo "</pre>";
+		// exit;
         $this->load->view('homepage');
 	}
 
-	public function user_registration(){
-		/*
-		$user_name = $_POST['user_name'];
-		$pwd = $_POST['pwd_retype'];
-		$user_data = array();
-		$mydata = array('name' => $user_name, 'pwd' => $pwd, 'date_created' => date('y-m-d H:i:s'));
-		array_push($user_data, $mydata);
-		*/
-		$this->load->view('member_registration.php');
+	public function reg_home(){
+		$this->load->view('member_registration');
 	}
 
-
-	public function member_registration($user_data){
-		$fname = $_POST['fname'];
-		$sname = $_POST['sname'];
-		$dob = $_POST['dob'];
-		$email =  $_POST['email'];
-		$pwd_retype =  $_POST['pwd_retype'];
-		$occupation = $_POST['occupation'];
-		echo $fname.'  '.$sname.' '.$dob.' '.$email.' '.$pwd_retype;
-
-
-
-		$this -> db -> insert_batch('user', $user_data);
+	public function member_registration(){
+		$this->registration->member_reg();
 	}
 }

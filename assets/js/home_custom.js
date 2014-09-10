@@ -3,7 +3,8 @@ $(document).ready(function(){
 var win_width = $(window).width();
 var win_height = $(window).height();
 var main_img = $("#main-image").height();
-//hiding main image
+
+//hiding login
 $("#tab-content").hide();
 $("#login").addClass("fadeOutUp");
 
@@ -26,8 +27,8 @@ $("#menu").click(function(){
 });
 
 // #home,#contact,#portfolio,#history,#about
-$("#home,#contact,#portfolio,#history,#about").width(win_width);
-$("#home,#contact,#portfolio,#history,#about").height(win_height);
+$("#home,#contact,#portfolio,#history,#about,.reg-body").width(win_width);
+$("#home,#contact,#portfolio,#history,#about,.reg-body").height(win_height);
 });
 
 function scrollDown(){

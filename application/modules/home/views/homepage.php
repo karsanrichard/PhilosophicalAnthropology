@@ -35,7 +35,9 @@
 	<input type="text" class="form-control float-left" name="username" placeholder="Username/Email"> 
 	<input type="password" class="form-control float-left" name="pwd" placeholder = "Password">
      <button class="btn btn-default" id="member_login" type="button">Login</button>
-     <button class = "btn btn-default login_submit" id="member_register" type="button" data-toggle="modal" data-target="#myModal">Register</button>
+     <!-- <button class = "btn btn-default login_submit" id="member_register" type="button" data-toggle="modal" data-target="#myModal">Register</button> -->
+     <a class = "btn btn-default login_submit" id="member_register" href="<?php echo base_url();?>home/reg_home">Register</a>
+
 </div>
 
 
@@ -101,30 +103,6 @@
 <!-- end of site content -->
 </div>
 <!-- end of container -->
-
- <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-		        <h4 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Member Registration.</h4>
-		        <h5 style = "font-family: 'PT Sans Caption', sans-serif !important;" class="modal-title" id="myModalLabel"> Step One: User Information.</h5>
-
-		      </div>
-		      <?php echo form_open('home/user_registration'); ?>
-		      <div class="clearfix">
-		      	<input type="text" class="form-control float-left" name="user_name" placeholder="User Name">
-		      	<input type="password" class="form-control float-left" name="pwd" placeholder="Password"></br>
-		      	<input type="password" class="form-control float-left" name="pwd_retype" placeholder="Re-type Password">
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="clear btn btn-danger" data-dismiss="modal">Close</button>
-		        <button type="submit" class="clear btn btn-info">Register</button>
-		        <?php echo form_close(); ?>
-		      </div>
-		    </div>
-		  </div>
-</div>
 
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>

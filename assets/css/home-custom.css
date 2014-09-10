@@ -21,7 +21,7 @@ a:hover{
 	margin: 0;
 	padding: 5%;
 	position: fixed;
-	background-image: url("../img/plumage.jpg");
+	background-image: url("../images/img/plumage.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: center;
@@ -262,39 +262,6 @@ float: left;
 
 /*END OF TABS*/
 
-/*GENERAL STYLING CLASSES*/
-.float-left{
-	float: left;
-
-}
-.display-none{
-	display: none;
-}
-
-.clear{
-	clear: both;
-}
-
-.inputs{
-	border:none;
-	border-radius: 0;
-	background-color: #E6E6E6;
-	outline-offset: 0px;
-	box-shadow: 0;
-	height: 30px;
-	color: #000000;
-	padding: 5px
-	}
-
-::-webkit-input-placeholder {
-   color: #424242;
-}
-
-
-
-
-
-/*END OF GENERAL STYLING CLASSES*/
 .back-to-top{
 	bottom: 20px;
 	right: 0;
@@ -322,10 +289,32 @@ MEMBER REGISTRATION STYLING
 ===========================
 */
 
+.input-names{
+	
 
+}
 
+.reg-form{
+	padding: 0 10%;
+}
 
+.reg-body{
+	background-image:url("../images/img/woman.jpg"); 
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: center;
+}
 
+.reg-container{
+
+}
+
+.reg-form h4{
+	margin: 10px 10px 10px 0;
+	font-size: 2em;
+}
 /*
 ===========================
 +++++++++++++++++++++++++++
@@ -333,6 +322,61 @@ end of MEMBER REGISTRATION STYLING
 +++++++++++++++++++++++++++
 ===========================
 */
+
+/*GENERAL STYLING CLASSES*/
+.float-left{
+	float: left;
+}
+.display-none{
+	display: none;
+}
+
+.clear{
+	clear: both;
+}
+
+.margin{
+	margin: 10px;
+}
+
+.margin-bottom{
+	margin: 0 0 10px 0 ;
+}
+
+.margin-top{
+	margin: 0 10px 0 0 ;
+}
+
+.margin-left{
+	margin: 0 0 0 10px ;
+
+}
+.margin-right{
+	margin: 0 10px 0 0 ;
+
+}
+.inputs{
+	border:none;
+	border-radius: 0;
+	background-color: #E6E6E6;
+	outline-offset: 0px;
+	box-shadow: 0;
+	height: 30px;
+	color: #000000;
+	padding: 5px
+	}
+
+::-webkit-input-placeholder {
+   color: #424242;
+}
+
+
+
+
+
+/*END OF GENERAL STYLING CLASSES*/
+
+
 
 /*CLEARFIX*/
 .clearfix:after {
@@ -375,6 +419,13 @@ end of MEMBER REGISTRATION STYLING
 	background-color: rgba(80, 179, 179, 0.5);
 	color: white;
 }
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{
+	outline: none;
+	background-color: rgba(90, 189, 189, 0.8);
+	color: #ffffff;
+}
+
 .btn:active{
 	border-radius: 0px;
 	background-color: rgba(80, 179, 179, 0.5);
