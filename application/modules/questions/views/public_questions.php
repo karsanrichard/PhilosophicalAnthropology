@@ -12,7 +12,7 @@
 	}
 </style>
 </head>
-<body  onload = "runQuestions();">
+<body>
 <!-- <form method="" action = ""> -->
 <label>Before you start answering the quesions please choose enter your email address</label>
 <input type = "email" name = "useremail" placeholder = "emailaddress" required/>
