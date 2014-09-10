@@ -21,7 +21,11 @@ a:hover{
 	margin: 0;
 	padding: 5%;
 	position: fixed;
+<<<<<<< HEAD
+	background-image: url("../img/plumage.jpg");
+=======
 	background-image: url("../images/img/plumage.jpg");
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: center;
@@ -38,6 +42,10 @@ a:hover{
 	background-color: rgba(173, 174, 178, 0.3);
 }
 .menu-custom a{
+<<<<<<< HEAD
+
+=======
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 	color: #F5F5F5;
 }
 .menu-custom li a:hover{
@@ -65,7 +73,14 @@ a:hover{
 	width: auto;
 	display: inline-block;
 }
+<<<<<<< HEAD
+.float-left{
+	float: left;
 
+}
+=======
+
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 /*END OF MENU*/
 
 /*LOGIN*/
@@ -87,7 +102,10 @@ background-color: rgba(80, 179, 179, 0.4);
 	width: auto;
 	margin: 10px;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 /*END OF LOGIN*/
 .unstyled{
 	list-style: none;
@@ -210,7 +228,11 @@ float: left;
 
 }
 
+<<<<<<< HEAD
+.info-tabs{
+=======
 .info-tabs,.contact-tab{
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 	margin:4.5% auto;
 	/*padding: 100px;*/
 	width: 100%;
@@ -247,6 +269,8 @@ float: left;
 	color: #585858;
 }
 
+<<<<<<< HEAD
+=======
 /*contact form*/
 .contact-tab{
 	padding: 5%;
@@ -260,6 +284,7 @@ float: left;
 	width: auto;
 }
 
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 /*END OF TABS*/
 
 .back-to-top{
@@ -280,6 +305,8 @@ footer{
 	text-align: center;
 }
 
+<<<<<<< HEAD
+=======
 
 /*
 ===========================
@@ -378,6 +405,7 @@ end of MEMBER REGISTRATION STYLING
 
 
 
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 /*CLEARFIX*/
 .clearfix:after {
      visibility: hidden;
@@ -419,6 +447,8 @@ end of MEMBER REGISTRATION STYLING
 	background-color: rgba(80, 179, 179, 0.5);
 	color: white;
 }
+<<<<<<< HEAD
+=======
 
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{
 	outline: none;
@@ -437,12 +467,15 @@ end of MEMBER REGISTRATION STYLING
 	background-color: rgba(80, 179, 179, 0.5);
 	color: white;
 }
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 .btn:hover{
 	border-radius: 0px;
 	background-color: rgba(80, 179, 179, 0.8);
 	color: #ffffff;
 	font-weight: inherit;
 }
+<<<<<<< HEAD
+=======
 .modal{
 	background-color: rgba(80, 179, 179, 0.4);
 }
@@ -451,4 +484,5 @@ end of MEMBER REGISTRATION STYLING
 	border:2px solid #000000;
 
 }
+>>>>>>> ccebc4cdc6e5972523109771b6a4ec6b0754c52f
 /*CUSTOMISED BOOTSTRAP*/

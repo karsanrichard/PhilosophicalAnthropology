@@ -344,6 +344,10 @@ $config['time_reference'] = 'local';
 $config['rewrite_short_tags'] = FALSE;
 
 
+// |default passwords
+
+$config['instructors_default'] = "123456";
+
 /*
 |--------------------------------------------------------------------------
 | Reverse Proxy IPs
@@ -354,7 +358,7 @@ $config['rewrite_short_tags'] = FALSE;
 | header in order to properly identify the visitor's IP address.
 | Comma-delimited, e.g. '10.0.1.200,10.0.1.201'
 |
-*/
+
 $config['proxy_ips'] = '';
 
 
