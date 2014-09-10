@@ -312,7 +312,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="pages/widgets.html">
+                            <a href="<?php echo base_url('admin/Instructors') ?>">
                                 <i class="fa fa-th"></i> <span>Instructors</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>

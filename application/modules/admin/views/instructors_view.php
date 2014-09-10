@@ -29,7 +29,7 @@
 	                    </a>
 	                </li>
 	                <li>
-	                    <a href="#">Dashboard</a>
+	                    <a href="<?php echo base_url('admin') ?>">Dashboard</a>
 	                </li>
 	                <li>
 	                    <a href="#">Shortcuts</a>
@@ -185,79 +185,49 @@
 	  		</div>
 			<div class="modal-body" style="padding-bottom:0px;">	
 				<?php echo form_open(base_url().'admin/add_instructor') ?>
-						<div>
-
-							<table cellpadding="4px" cellspacing="4px">
-								<tr>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon" >First Name:</span>
-										<input class="form-control" type="text" name="first_name" id="first_name" required/>
-									</div>
-								</td>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon">Second Name: </span>
-										<input class="form-control" type="text" name="second_name" id="second_name" required/>
-									</div>
-								</td>
-								</tr>
-								<tr>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon">Other Name: </span>
-										<input class="form-control" type="text" name="other_name" id="other_name" required/>
-									</div>
-								</td>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon">Date of Birth: </span>
-										<input class="form-control" type="date" name="DOB" id="DOB" required/>
-									</div>
-								</td>
-								</tr>
-								<tr>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon">Institution: </span>
-										<input class="form-control" type="text" name="institution" id="institution" required/>
-									</div>
-								</td>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon">Location: </span>
-										<input class="form-control" type="text" name="location" id="location" required/>
-									</div>
-								</td>
-								</tr>
-								<tr>
-								<td>
-									<div class="input-group" style="color: green;">
-										<span class="input-group-addon" >@Email: </span>
-										<input class="form-control" type="text" name="email" id="email" required/>
-									</div>
-								</td>
-								<td>
-									<div class="input-group">
-										<span class="input-group-addon">Phone Number: </span>
-										<input class="form-control" type="text" name="phone" id="phone" required/>
-									</div>
-								</td>
-								</tr>
-								<tr>
-									<td colspan="4">
-										<div style="">
-											<button type="submit" class="btn btn-default"> Save User</button>
-										</div>
-									</td>
-								</tr>
-							</table>
+					<div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;" >First Name:</span>
+							<input class="textfield form-control" type="text" name="first_name" id="first_name" required/>
 						</div>
-					</form>
-
-			<div class="modal-footer" style="height:11px;padding-top:11px;">
-      			<?php echo $this->config->item("copyrights");?>
-      		</div> 
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Second Name: </span>
+							<input class="textfield form-control" type="text" name="second_name" id="second_name" required/>
+						</div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Other Name: </span>
+							<input class="textfield form-control" type="text" name="other_name" id="other_name" required/>
+						</div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Date of Birth: </span>
+							<input class="textfield form-control" type="date" name="DOB" id="DOB" required/>
+						</div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Institution: </span>
+							<input class="textfield form-control" type="text" name="institution" id="institution" required/>
+						</div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Location: </span>
+							<input class="textfield form-control" type="text" name="location" id="location" required/>
+						</div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">@Email: </span>
+							<input class="textfield form-control" type="text" name="email" id="email" required/>
+						</div>
+						<div class="input-group" style="width: 100%;padding:4px;">
+							<span class="input-group-addon" style="width: 40%;">Phone Number: </span>
+							<input class="textfield form-control" type="text" name="phone" id="phone" required/>
+						</div>
+						<div style="">
+							<button type="submit" class="btn btn-default"> Save User</button>
+						</div>
+								
+					</div>
+				</form>
+				<div class="modal-footer" style="height:11px;padding-top:11px;">
+	      			<?php echo $this->config->item("copyrights");?>
+	      		</div> 
+	      	</div>
 		</div>
 	</div>
 </div>
@@ -270,29 +240,22 @@
 	    		<h5 class="modal-title">Edit Instructor</h5>
 	  		</div>
 			<div class="modal-body" style="padding-bottom:0px;">	
-				<div class="input-group">
-					<table style="font-size:90%" id="" class="table table-bordered table-responsive">
-						<thead>
-							<tr>
-								<td rowspan="2"><center>#</center></td>
-								<td rowspan="2"><center>First Name</center></td>
-								<td rowspan="2"><center>Second Name</center></td>
-								<td rowspan="2"><center>Institution</center></td>
-								<td rowspan="2"><center>Location</center></td>
-								<td rowspan="2"><center>Email</center></td>
-								<td rowspan="2"><center>Telephone</center></td>
-								<td colspan="2"><center>Actions</center></td>
-							</tr>
-							<tr>
-								<td><center>Status</center></td>
-								<td><center>Edit</center></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr id="edit_table_details"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-						</tbody>
-					</table>
-				</div>
+				<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;"> First Name:</span>
+						<input id="editfname" name="email" class="textfield form-control" />	
+		        </div>
+				<div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;"> Second Name:</span>
+						<input id="editsname" name="email" class="textfield form-control" />	
+		        </div>
+		        <div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;"> Institution:</span>
+						<input id="editinst" name="email" class="textfield form-control" />	
+		        </div>
+		        <div class="input-group" style="width: 100%;padding:4px;">
+						<span class="input-group-addon" style="width: 40%;"> Location:</span>
+						<input id="editlocal" name="email" class="textfield form-control" />	
+		        </div>
 				<div class="input-group" style="width: 100%;padding:4px;">
 						<span class="input-group-addon" style="width: 40%;"> email:</span>
 						<input id="editemail" name="email" class="textfield form-control" />	
@@ -302,18 +265,21 @@
 					<input id="editphone" name="phone" class="textfield form-control" />	
 		        </div>
 				<div class="input-group" style="width: 100%;padding:4px;">
-					<span class="input-group-addon" style="width: 40%;"> Rollout Status :</span>
-					<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="1">  Rolledout  <span style="font-size: 1.4em;color: #3e8f3e;" class="glyphicon glyphicon-ok-sign"></span></input></span>
-					<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="2">  Not Rolledout  <span style="font-size: 1.4em;color: #eb9316;" class="glyphicon glyphicon-question-sign"></span></input></span>
+					<span class="input-group-addon" style="width: 40%;"> Status :</span>
+					<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="1">  Active  <span style="font-size: 1.4em;color: #3e8f3e;" class="glyphicon glyphicon-ok-sign"></span></input></span>
+					<span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="2">  Deactivate <span style="font-size: 1.4em;color: #eb9316;" class="glyphicon glyphicon-remove-sign"></span></input></span>
 	            </div>				
-					
-
-			<div class="modal-footer" style="height:11px;padding-top:11px;">
-      			<?php echo $this->config->item("copyrights");?>
-      		</div> 
+				<div class="modal-footer" style="height:11px;padding-top:11px;">
+	      			<?php echo $this->config->item("copyrights");?>
+	      		</div> 
+	      	</div>
 		</div>
 	</div>
 </div>
+
+
+
+
 
 
 
@@ -348,10 +314,10 @@
 		$("#edit_table_details").html(row);
 
 		$("#editfacilityid").val(id);
-		$("#editfacname").val(fname);
-		$("#editdis").val(sname);
-		$("#editreg").val(institution);
-		$("#editpar").val(location);
+		$("#editfname").val(fname);
+		$("#editsname").val(sname);
+		$("#editinst").val(institution);
+		$("#editlocal").val(location);
 		$("#editemail").val(email);
 		$("#editphone").val(phone);
 			
