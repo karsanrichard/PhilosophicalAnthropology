@@ -311,17 +311,10 @@
                                 <i class="fa fa-tachometer"></i> <span>Home</span>
                             </a>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-mortar-board"></i>
-                                <span>Instructors</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                        <li>
+                            <a href="<?php echo base_url().'admin/Instructors'?>">
+                                <i class="fa fa-mortar-board"></i> <span>Instructors</span>
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
-                            </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
