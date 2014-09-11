@@ -35,5 +35,15 @@ class MY_Model extends CI_Model
             
             
         }
-    } 
+    }
+
+    function add_error()
+    {
+        $subject = $this->input->post('subject');
+        $message = $this->input->post('message');
+
+        $sql = "INSERT INTO error_reports (subject, message, user_id) VALUES ('$subject', '$message', 1)";
+        $insert = $this->db->query($sql);
+        echo "Error has been reported";
+    }
 }

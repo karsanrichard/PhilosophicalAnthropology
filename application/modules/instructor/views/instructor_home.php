@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Admin | Dashboard</title>
+        <title>Instructor | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
-        <link href="<?php echo base_url().'assets/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet" type="text/css" />
+       <link href="<?php echo base_url().'assets/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
         <link href="<?php echo base_url().'assets/css/fonts/fontawesome/css/font-awesome.min.css'?>" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
@@ -30,12 +30,12 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="skin-black">
+    <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                Admin Dashboard
+                Instructor's Page
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -46,6 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
@@ -124,118 +125,6 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="glyphicon glyphicon-warning-sign"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="glyphicon glyphicon-tasks"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Create a nice theme
-                                                    <small class="pull-right">40%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Some task I need to do
-                                                    <small class="pull-right">60%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Make beautiful transitions
-                                                    <small class="pull-right">80%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">80% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -291,7 +180,7 @@
                         <div class="pull-left info">
                             <p>Hello, Jane</p>
 
-                            <a href="#"><i class="glyphicon glyphicon-ok-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
                     <!-- search form -->
@@ -307,58 +196,41 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="<?php echo base_url(). 'admin'?>">
-                                <i class="fa fa-tachometer"></i> <span>Home</span>
+                            <a href="<?php echo base_url(). 'instructor'?>">
+                                <i class="fa fa-home"></i> <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url().'admin/Instructors'?>">
-                                <i class="fa fa-mortar-board"></i> <span>Instructors</span>
+                            <a href="<?php echo base_url().'questions/set_questions'?>">
+                                <i class="fa fa-question"></i> <span>Questions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ion ion-ios7-paper-outline"></i>
+                                <span>Quizes taken</span>
+                            </a>
+                        </li>
+                        <li>
+                        	<a href = ""><i class = "fa fa-upload"></i> <span>Upload Notes</a></span>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url() .'videos'?>">
+                                <i class="fa fa-videos"></i>
+                                <span>Videos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailbox.html">
+                                <i class="fa fa-envelope"></i> <span>Mailbox</span>                                
                             </a>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-users"></i>
-                                <span>Members</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-user"></i> <span>Users</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
-                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
-                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="pages/calendar.html">
-                                <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                <small class="badge pull-right bg-red">3</small>
+                                <i class="fa fa-lock"></i> <span>Log out</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="pages/mailbox.html">
-                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                                <small class="badge pull-right bg-yellow">12</small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-lock"></i> <span>Log Out</span>
-                            </a>
-                        </li>
-                    </ul>
+                     </ul>
                 </section>
                 <!-- /.sidebar -->
             </aside>
@@ -368,33 +240,32 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
+                        Instructor Home Page
                         <small>Control panel</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li class="active">Instructor Home Page</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
-
-                    <!-- Small boxes (Stat box) -->
+                <!-- Small boxes (Stat box) -->
                     <div class="row">
                         <div class="col-lg-3 col-xs-6">
                             <!-- small box -->
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        150
+                                        Upload
                                     </h3>
                                     <p>
-                                        Members
+                                        Notes
                                     </p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person-stalker"></i>
+                                    <i class="fa fa-upload"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
@@ -406,14 +277,14 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        53
+                                        Questions
                                     </h3>
                                     <p>
-                                        Instructors
+                                        Set Questions
                                     </p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
+                                    <i class="ion ion-ios7-paper-outline"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
@@ -425,14 +296,14 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                        Upload
                                     </h3>
                                     <p>
-                                        Users
+                                        videos
                                     </p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                                    <i class="ion ion-ios7-videocam"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
@@ -444,14 +315,14 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        65
+                                        Report
                                     </h3>
                                     <p>
-                                        Questions
+                                        problem
                                     </p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
+                                    <i class="ion ion-minus-circled"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
@@ -497,32 +368,29 @@
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
                         <section class="col-lg-5 connectedSortable">                            
 
-                            <!-- Calendar -->
-                            <div class="box box-solid bg-green-gradient">
+                        <!-- Report problem -->
+                        <div class="box box-primary">
                                 <div class="box-header">
-                                    <i class="fa fa-calendar"></i>
-                                    <h3 class="box-title">Calendar</h3>
-                                    <!-- tools box -->
-                                    <div class="pull-right box-tools">
-                                        <!-- button with a dropdown -->
-                                        <div class="btn-group">
-                                            <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                                            <ul class="dropdown-menu pull-right" role="menu">
-                                                <li><a href="#">Add new event</a></li>
-                                                <li><a href="#">Clear events</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">View calendar</a></li>
-                                            </ul>
-                                        </div>
-                                        <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>                                        
-                                    </div><!-- /. tools -->
+                                    <h3 class="box-title">Report your Problem Here</h3>
                                 </div><!-- /.box-header -->
-                                <div class="box-body no-padding">
-                                    <!--The calendar -->
-                                    <div id="calendar" style="width: 100%"></div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->                            
+                                <!-- form start -->
+                                <form id = "instruct" action="instructor/send_error" method = "POST">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="subject">Subject</label>
+                                            <input type="text" class="form-control" id="subject" placeholder="Enter Subject" name = "subject">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea type="password" class="form-control" id="message" placeholder="Type message here" name="message"></textarea>
+                                        </div>
+                                    </div><!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button class="btn btn-primary" type = "submit" id = "sendError"><i class = "ion ion-android-send"></i> Submit</button>
+                                    </div>
+                                </form>
+                            </div><!-- /.box -->                         
 
                         </section><!-- right col -->
                     </div><!-- /.row (main row) -->
@@ -531,8 +399,6 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        <!-- add new calendar event modal -->
-
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -540,9 +406,11 @@
         <script src="<?php echo base_url().'assets/js/jquery.js'?>" type="text/javascript"></script>
         <!-- Bootstrap -->
         <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
-        <!-- Morris.js charts -->
+        <!-- Morris
+ 	
+ 	.js charts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="<?php echo base_url().'assets/js/plugins/morris/morris.min.js'?>" type="text/javascript"></script>
+        <!--<script src="<?php echo base_url().'assets/js/plugins/asap/asap.min.js'?>" type="text/javascript"></script>-->
         <!-- Sparkline -->
         <script src="<?php echo base_url().'assets/js/plugins/sparkline/jquery.sparkline.min.js'?>" type="text/javascript"></script>
         <!-- jvectormap -->
@@ -558,15 +426,14 @@
         <script src="<?php echo base_url().'assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'?>" type="text/javascript"></script>
         <!-- iCheck -->
         <script src="<?php echo base_url().'assets/js/plugins/iCheck/icheck.min.js'?>" type="text/javascript"></script>
-
+        <script src="<?php echo base_url().'assets/js/back.js'?>"></script>
         <!-- Admin App -->
         <script src="<?php echo base_url().'assets/js/admin/app.js'?>" type="text/javascript"></script>
 
-        <!-- Admin dashboard demo (This is only for demo purposes)  -->
+        <!--Admin dashboard demo (This is only for demo purposes) -->
         <script src="<?php echo base_url().'assets/js/admin/dashboard.js'?>" type="text/javascript"></script>
 
         <!-- Admin for demo purposes -->
         <script src="<?php echo base_url().'assets/js/admin/demo.js'?>" type="text/javascript"></script>
-
     </body>
 </html>

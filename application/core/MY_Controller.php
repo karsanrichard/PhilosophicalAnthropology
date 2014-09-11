@@ -8,6 +8,7 @@ class MY_Controller extends MX_Controller
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->model('admin/admin_model');
     }
 
 	function index()
@@ -28,5 +29,11 @@ class MY_Controller extends MX_Controller
 		$data = md5($encrypted_data);
 		return $data;
 		
+	}
+
+	public function send_error()
+	{
+		// echo "Am the one";
+		$this->admin_model->add_error();
 	}
 }

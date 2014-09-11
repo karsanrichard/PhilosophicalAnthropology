@@ -66,14 +66,16 @@ class Admin extends MY_Controller
 
 	public function email_details()
 	{
-		$recepient 	= $this->input->post('recipient');
+		$recipient 	= $this->input->post('recipient');
 		$subject 	= $this->input->post('subject');
 		$message 	= $this->input->post('message');
 
-		$this->send_email($recepient, $subject, $message);
+		// print_r($this->input->post());die;
+
+		$this->send_email($recipient, $subject, $message);
 	}
 
-	public function send_email($recepient, $subject, $message)
+	public function send_email($recipient, $subject, $message)
 	{
 		$time=date('Y-m-d');
 		
@@ -89,7 +91,7 @@ class Admin extends MY_Controller
 		$this->email->set_newline("\r\n");
 
 		$this->email->from('chrisrichrads@gmail.com', 'PHILOSOPHICAL ANTHROPOLOGY');
-		$this->email->to($recepient);
+		$this->email->to($recipient);
 		$this->email->subject($subject);
 		$this->email->message($message);
 		$this->email->set_mailtype("html");
@@ -97,7 +99,7 @@ class Admin extends MY_Controller
 		
 		if($this->email->send())
 			{	
-				$this->admin_model->store_sent_email($recepient, $subject, $message, $time);
+				$this->admin_model->store_sent_email($recipient, $subject, $message, $time);
 				$this->index();
 				
 			} else 

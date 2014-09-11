@@ -142,6 +142,7 @@ class M_questions extends MY_Model {
 
                     //die(print $i);
                     // $this->writeAssessmentTrackerLog();
+                    echo "true";
                     return true;
                 }
             }
