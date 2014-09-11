@@ -212,7 +212,7 @@
                             </a>
                         </li>
                         <li>
-                        	<a href = ""><i class = "fa fa-upload"></i> <span>Upload Notes</a></span>
+                        	<a id = "un" style = "cursor: pointer;"><i class = "fa fa-upload"></i> <span>Upload Notes</a></span>
                         </li>
                         <li>
                             <a href="<?php echo base_url() .'videos'?>">
@@ -399,6 +399,52 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
+        <div id="upload_notes" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"><i class = "ion ion-ios7-paper-outline"></i> Upload Notes</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="filename">Save As</label>
+                                            <input type="text" class="form-control" id="filename" placeholder="Enter File Name" name = "filename">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Choose a Category</label>
+                                            <select name = "category" class = "form-control">
+                                                <option value = "">Choose a Category</option>
+                                                <option value = "sexuality">Human Sexuality</option>
+                                                <option value = "freedom">Human Freedom</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="choosefile">File input</label>
+                                            <input type="file" id="exampleInputFile">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Check me out
+                                            </label>
+                                        </div>
+                                    </div><!-- /.box-body -->
+
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
