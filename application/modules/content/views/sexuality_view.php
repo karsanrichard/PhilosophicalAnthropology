@@ -9,11 +9,11 @@
 		<script type="text/javascript" src = "<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript" src = "<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 
-		<!--<script src="<?php echo base_url(); ?>assets/mediaelement/build/mediaelement-and-player.min.js"></script>
-		<script src="<?php echo base_url(); ?>assets/mediaelement/testforfiles.js"></script>	
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/mediaelement/build/mediaelementplayer.min.css" />   
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/mediaelement/build/mejs-skins.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/semantic/packaged/css/semantic.css">-->
+		<!--<script src="<?php //echo base_url(); ?>assets/mediaelement/build/mediaelement-and-player.min.js"></script>
+		<script src="<?php// echo base_url(); ?>assets/mediaelement/testforfiles.js"></script>	
+		<link rel="stylesheet" href="<?php //echo base_url(); ?>assets/mediaelement/build/mediaelementplayer.min.css" />   
+		<link rel="stylesheet" href="<?php //echo base_url(); ?>assets/mediaelement/build/mejs-skins.css" />
+		<link rel="stylesheet" type="text/css" href="<?php //echo base_url();?>assets/semantic/packaged/css/semantic.css">-->
 	</head>
 	<body>
 		<div>
@@ -225,7 +225,7 @@
     <script src="<?php echo base_url().'assets/Flat-UI/js/bootstrap-select.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/bootstrap-switch.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/flatui-checkbox.js' ?>"></script>
-    <script src="<?php echo base_url().'assets/Fla-UI/js/flatui-radio.js' ?>"></script>
+    <script src="<?php echo base_url().'assets/Flat-UI/js/flatui-radio.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/jquery.tagsinput.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/jquery.placeholder.js' ?>"></script>
 	</body>

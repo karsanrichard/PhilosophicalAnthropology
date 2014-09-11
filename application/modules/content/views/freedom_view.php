@@ -203,7 +203,7 @@
     <script src="<?php echo base_url().'assets/Flat-UI/js/bootstrap-select.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/bootstrap-switch.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/flatui-checkbox.js' ?>"></script>
-    <script src="<?php echo base_url().'assets/Fla-UI/js/flatui-radio.js' ?>"></script>
+    <script src="<?php echo base_url().'assets/Flat-UI/js/flatui-radio.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/jquery.tagsinput.js' ?>"></script>
     <script src="<?php echo base_url().'assets/Flat-UI/js/jquery.placeholder.js' ?>"></script>
 	</body>
