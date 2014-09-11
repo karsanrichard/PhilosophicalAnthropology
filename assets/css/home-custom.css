@@ -21,7 +21,6 @@ a:hover{
 	margin: 0;
 	padding: 5%;
 	position: fixed;
-	background-image: url("../img/plumage.jpg");
 	background-image: url("../images/img/plumage.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -39,8 +38,6 @@ a:hover{
 	background-color: rgba(173, 174, 178, 0.3);
 }
 .menu-custom a{
-
-
 	color: #F5F5F5;
 }
 .menu-custom li a:hover{
@@ -69,14 +66,8 @@ a:hover{
 	display: inline-block;
 }
 
-.float-left{
-	float: left;
-
-}
-
-
-
 /*END OF MENU*/
+
 /*LOGIN*/
 .login{
 width: 300px;
@@ -96,9 +87,6 @@ background-color: rgba(80, 179, 179, 0.4);
 	width: auto;
 	margin: 10px;
 }
-
-
-
 
 /*END OF LOGIN*/
 .unstyled{
@@ -222,11 +210,7 @@ float: left;
 
 }
 
-
-.info-tabs{
-=======
 .info-tabs,.contact-tab{
-
 	margin:4.5% auto;
 	/*padding: 100px;*/
 	width: 100%;
@@ -263,7 +247,6 @@ float: left;
 	color: #585858;
 }
 
-
 /*contact form*/
 .contact-tab{
 	padding: 5%;
@@ -276,7 +259,6 @@ float: left;
  .modal input{
 	width: auto;
 }
-
 
 /*END OF TABS*/
 
@@ -297,9 +279,6 @@ footer{
 	width: 100%;
 	text-align: center;
 }
-
-
-
 
 /*
 ===========================
@@ -396,8 +375,6 @@ end of MEMBER REGISTRATION STYLING
 
 /*END OF GENERAL STYLING CLASSES*/
 
-
-
 /*CLEARFIX*/
 .clearfix:after {
      visibility: hidden;
@@ -440,7 +417,6 @@ end of MEMBER REGISTRATION STYLING
 	color: white;
 }
 
-
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{
 	outline: none;
 	background-color: rgba(90, 189, 189, 0.8);
@@ -458,14 +434,12 @@ end of MEMBER REGISTRATION STYLING
 	background-color: rgba(80, 179, 179, 0.5);
 	color: white;
 }
-
 .btn:hover{
 	border-radius: 0px;
 	background-color: rgba(80, 179, 179, 0.8);
 	color: #ffffff;
 	font-weight: inherit;
 }
-
 .modal{
 	background-color: rgba(80, 179, 179, 0.4);
 }
@@ -474,5 +448,4 @@ end of MEMBER REGISTRATION STYLING
 	border:2px solid #000000;
 
 }
-
 /*CUSTOMISED BOOTSTRAP*/
