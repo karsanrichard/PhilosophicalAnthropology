@@ -6,11 +6,11 @@ class Home extends MY_Controller
 		parent::__construct();
 		$this -> load -> model('registration');
 		//$this -> load -> helper(array('form', 'url'));
-		$this -> load -> database();
+		//$this -> load -> database();
 		
 	}
 
-	function index()
+	public function index()
 	{
 		if(empty($this->session->userdata('user_data'))){
 		$default = array(
