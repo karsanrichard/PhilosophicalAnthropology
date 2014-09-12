@@ -8,16 +8,16 @@ class Registration extends CI_Model {
         parent::__construct();
     }
 
-    function member_reg(){
+    function member_reg($fname,$sname,$onames,$dob,$email,$user_name,$pwd){
         $mem_data = array();
         $user_info = array();
-        $fname = $_POST['fname'];
-        $sname = $_POST['sname'];
-        $onames = $_POST['onames'];
-        $dob = $_POST['dob'];
-        $email =  $_POST['email'];
-        $user_name =  $_POST['user_name'];
-        $pwd =  $_POST['pwd'];
+        // $fname = $_POST['fname'];
+        // $sname = $_POST['sname'];
+        // $onames = $_POST['onames'];
+        // $dob = $_POST['dob'];
+        // $email =  $_POST['email'];
+        // $user_name =  $_POST['user_name'];
+        // $pwd =  $_POST['pwd'];
 
         $user_data=array('user_name' =>$user_name,'pwd' => $pwd,'email' => $email);
         array_push($user_info,$user_data);
@@ -57,14 +57,16 @@ class Registration extends CI_Model {
         */
     }
 
-    function verification(){
-       $username = $_POST['username'];
-       $password = $_POST['password'];
+    function verification($username,$password){
+       // $username = $_POST['username'];
+       // $password = $_POST['password'];
 
         $user_table = array();
         $u_table = $this->db->get('users');
 
         $results = $u_table->result_array();
+
+        // print_r($results); die();
  
         foreach ($results as $user_details) {
             if(($user_details['email'] == $username )|| ($user_details['user_name'] == $username))
