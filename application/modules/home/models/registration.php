@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Registration extends CI_Model {
+class Registration extends MY_Model {
 
     function __construct()
     {
@@ -41,7 +41,8 @@ class Registration extends CI_Model {
                    'email'     => $user_email,
                    'login_status' => 'TRUE',
                    'user_data' => $user_name,
-                   'login_info' => $login_msg
+                   'login_info' => $login_msg,
+                   'full_name' => $full_name
 
                );
 
@@ -58,9 +59,9 @@ class Registration extends CI_Model {
     }
 
     function verification(){
+        $details_user = '';
        $username = $_POST['username'];
        $password = $_POST['password'];
-
         $user_table = array();
         $u_table = $this->db->get('users');
 
@@ -70,14 +71,28 @@ class Registration extends CI_Model {
             if(($user_details['email'] == $username )|| ($user_details['user_name'] == $username))
             {
                 if ($user_details['pwd'] == $password) {
-                    echo "SUCESSFUL LOGIN";
-                    $login_status = array(
+                    echo "SUCCESSFUL LOGIN";
+                    if ($user_details['user_type'] == 'student') {
+                       $details_user = $this->registration->getvaluesby('members',  array('user_id' => $user_details['id']));
+                       $fname = $details_user['fname'];
+                       $lname = $details_user['lname'];
+                       $email = $details_user['email'];
+                        $login_status = array(
                         'login_status' => 'TRUE',
                         'user_data' => $username,
-                        'login_info' => 'Logged in as: '. $username
+                        'login_info' => 'Logged in as: '. $username,
+                        'fname' => $fname,
+                        'lname' => $lname,
+                        'email' =>$email
                         );
                     $this->session->set_userdata($login_status);
                     redirect('home/index');
+                    }
+                    else if($user_details['user_type'] == 'member')
+                    {
+                         $details_user = $this->registration->getvaluesby('instructors',  array('user_id' => $user_details['id']));
+                         
+                    }
                 }
                 else {
                     echo "PASSWORD WRONG";
