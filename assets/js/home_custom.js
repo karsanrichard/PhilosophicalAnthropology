@@ -7,6 +7,7 @@ var main_img = $("#main-image").height();
 //hiding login
 $("#tab-content").hide();
 $("#login").addClass("fadeOutUp");
+$( "#dob" ).datepicker();
 
 $("#login_button").click(function(){
 	if ($("#login").hasClass("fadeOutUp")) {

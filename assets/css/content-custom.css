@@ -1,0 +1,8 @@
+/*CUSTOM FLAT UI*/
+.panel-group {
+width: 300px;
+}
+.panel-body{
+	float: right;
+}
+/*END OF CUSTOM FLAT UI*/
