@@ -48,7 +48,7 @@ class Admin extends MY_Controller
             $this->instructors();
 		} else 
 		{
-			echo "The form validation was very successfull";
+			// echo "The form validation was very successfull";
             
 			$this->admin_model->add_Instructors($default_password);
 			

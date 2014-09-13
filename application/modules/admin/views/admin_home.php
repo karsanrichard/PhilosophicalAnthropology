@@ -316,19 +316,10 @@
                                 <i class="fa fa-mortar-board"></i> <span>Instructors</span>
                             </a>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-users"></i>
-                                <span>Members</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                        <li>
+                            <a href="javascript:void();" onclick="members()">
+                                <i class="fa fa-users"></i><span>Members</span>   
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                            </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
@@ -475,22 +466,23 @@
                                         <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                                     </div><!-- /. tools -->
                                 </div>
-                                <div class="box-body">
-                                    <form action="<?php echo base_url(). 'admin/email_details'?>" method="post">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="recipient" placeholder="Email to:"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="subject" placeholder="Subject"/>
-                                        </div>
-                                        <div>
-                                            <textarea class="textarea" name = "message" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                        </div>
-                                </div>
-                                <div class="box-footer clearfix">
-                                    <button class="pull-right btn btn-default" id="sendEmail" type = "submit">Send <i class="fa fa-arrow-circle-right"></i></button>
-                                    </form>
-                                </div>
+                                <form action="<?php echo base_url(). 'admin/email_details'?>" method="post">
+                                    <div class="box-body">
+                                        
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="recipient" placeholder="Email to:"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="subject" placeholder="Subject"/>
+                                            </div>
+                                            <div>
+                                                <textarea class="textarea" name = "message" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                            </div>
+                                    </div>
+                                    <div class="box-footer clearfix">
+                                        <button class="pull-right btn btn-default" id="sendEmail" type = "submit">Send <i class="fa fa-arrow-circle-right"></i></button>
+                                    </div>
+                                </form>
                             </div>
 
                         </section><!-- /.Left col -->
@@ -532,6 +524,62 @@
         </div><!-- ./wrapper -->
 
         <!-- add new calendar event modal -->
+        <div class="modal-fade" id="membersDiv">
+            <div class="modal-dialog" style="width:60%;margin-bottom:2px;">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h5 class="modal-title">Add Instructor</h5>
+                    </div>
+                    <div class="modal-body" style="padding-bottom:0px;">    
+                        <?php echo form_open(base_url().'admin/add_instructor') ?>
+                            <div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;" >First Name:</span>
+                                    <input class="textfield form-control" type="text" name="first_name" id="first_name" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">Second Name: </span>
+                                    <input class="textfield form-control" type="text" name="second_name" id="second_name" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">Other Name: </span>
+                                    <input class="textfield form-control" type="text" name="other_name" id="other_name" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">Date of Birth: </span>
+                                    <input class="textfield form-control" type="date" name="DOB" id="DOB" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">Institution: </span>
+                                    <input class="textfield form-control" type="text" name="institution" id="institution" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">Location: </span>
+                                    <input class="textfield form-control" type="text" name="location" id="location" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">@Email: </span>
+                                    <input class="textfield form-control" type="text" name="email" id="email" required/>
+                                </div>
+                                <div class="input-group" style="width: 100%;padding:4px;">
+                                    <span class="input-group-addon" style="width: 40%;">Phone Number: </span>
+                                    <input class="textfield form-control" type="text" name="phone" id="phone" required/>
+                                </div>
+                                <div style="">
+                                    <button type="submit" class="btn btn-default"> Save User</button>
+                                </div>
+                                        
+                            </div>
+                        </form>
+                        <div class="modal-footer" style="height:11px;padding-top:11px;">
+                            <?php echo $this->config->item("copyrights");?>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
 
         <!-- jQuery 2.0.2 -->
@@ -567,6 +615,12 @@
 
         <!-- Admin for demo purposes -->
         <script src="<?php echo base_url().'assets/js/admin/demo.js'?>" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        function members () {
+            $('#membersDiv').modal('show');
+        }
+        </script>
 
     </body>
 </html>

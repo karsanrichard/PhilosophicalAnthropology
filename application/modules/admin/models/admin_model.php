@@ -43,6 +43,8 @@ class Admin_model extends MY_Model
 		$username		= $first_name.".".$second_name;
 		$password 		= $default_password;
 
+		$new_user_id 	= $this->login_credentials($username, $password,$email);
+
 		$details = "INSERT INTO 
 								`instructors`
 							VALUES
@@ -56,28 +58,33 @@ class Admin_model extends MY_Model
 										'$location',
 										'$email',
 										'$phone',
-										'1',
+										'$new_user_id',
 										'1'
 									)";
 
 		// echo $details; 
 		$insert = $this->db->query($details);
-		$this->login_credentials($username, $password);
-	
-		
+			
 	}
 
-	public function login_credentials($username, $password)
+	public function login_credentials($username, $password,$email)
 	{
 			$logins	 = "INSERT INTO
-									`user`
+									`users`
 								VALUES
 										(
 											'NULL',
 											'$username',
-											'$password'
+											'$email',
+											'instructor',
+											'$password',
+											'timestamp'
 										)";
 		$this->db->query($logins);
+
+		$new_user_id = $this -> db -> insert_id();
+
+		return $new_user_id;
 	}
 
 	function store_sent_email($recepient, $subject, $message, $tim)
