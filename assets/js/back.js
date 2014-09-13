@@ -12,7 +12,7 @@ $(document).ready(function(){
 	    form.onsubmit = function(event) {
 	    event.preventDefault();
 
-	    r.innerHTML = '<i class = "fa fa-refresh fa-spin"></i> Working...';
+	    r.innerHTML = '<i class = "fa fa-spinner fa-spin"></i> Working...';
 
 	    var data = $('#instruct :input').serializeArray();
 	    // console.log(data);

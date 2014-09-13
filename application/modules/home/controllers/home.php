@@ -47,11 +47,24 @@ class Home extends MY_Controller
 	}
 
 	public function member_registration(){
-		$this->registration->member_reg();
+        $fname = $_POST['fname'];
+        $sname = $_POST['sname'];
+        $onames = $_POST['onames'];
+        $dob = $_POST['dob'];
+        $email =  $_POST['email'];
+        $user_name =  $_POST['user_name'];
+        $pwd = $_POST['pwd'];
+        $pwd =  $this->my_hash($pwd);
+		
+    	$this->registration->member_reg($fname,$sname,$onames,$dob,$email,$user_name,$pwd);
 	}
 
 	public function login(){
-		$result = $this->registration->verification();
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+       	$password = $this->my_hash($password);
+
+		$result = $this->registration->verification($username,$password);
 	}
 
 	public function logout(){
