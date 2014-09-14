@@ -1,22 +1,14 @@
 $(document).ready(function(){
 	var win_width = $(window).width();
 	var win_height = $(window).height();
-	$('.menu-links1').click(function(){
-		$('.fullscreen1').width(win_width);
-		$('.fullscreen1').height(win_height);
-	});
-
-	$('.menu-links2').click(function(){
-		$('.fullscreen2').width(win_width);
-		$('.fullscreen2').height(win_height);
-	});
-
-	$('.menu-links3').click(function(){
-		$('.fullscreen3').width(win_width);
-		$('.fullscreen3').height(win_height);
-	});
+$('.toggle-button').click(function(){
+	//$('#nav-menu').toggleClass('active');
+	$('#nav-menu').sidebar('toggle');
+});
+// $('')
+	//$('sidebar').first().sidebar('attach events','.toggle.button');
 // fullscreen
-	$('.ui.sidebar').sidebar('toggle');
+	//$('.ui.sidebar').sidebar('toggle');
 ;
 })
 function scrollDown(){

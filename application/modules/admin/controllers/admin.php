@@ -11,11 +11,13 @@ class Admin extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('admin_model');
+		$this ->load->model('home/registration');
 	}
 
 	public function index()
 	{
-		$this->load->view('admin_home');
+		$data['statistics'] = $this->registration->data_collection();
+		$this->load->view('admin_home',$data);
 
 	}
 	

@@ -66,10 +66,13 @@ a:hover{
 	display: inline-block;
 }
 
+<<<<<<< HEAD
 .float-left{
 	float: left;
 
 }
+=======
+>>>>>>> 26b71af623af494b052680bc4741e285695e00fb
 /*END OF MENU*/
 
 /*LOGIN*/
@@ -438,14 +441,20 @@ end of MEMBER REGISTRATION STYLING
 	background-color: rgba(80, 179, 179, 0.5);
 	color: white;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26b71af623af494b052680bc4741e285695e00fb
 .btn:hover{
 	border-radius: 0px;
 	background-color: rgba(80, 179, 179, 0.8);
 	color: #ffffff;
 	font-weight: inherit;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26b71af623af494b052680bc4741e285695e00fb
 .modal{
 	background-color: rgba(80, 179, 179, 0.4);
 }

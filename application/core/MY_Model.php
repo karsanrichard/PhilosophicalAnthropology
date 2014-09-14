@@ -46,4 +46,16 @@ class MY_Model extends CI_Model
         $insert = $this->db->query($sql);
         echo "Error has been reported";
     }
+
+    function getvaluesby($tablename, $searchparameter)
+    {
+        try {
+            $query = $this->db->get_where($tablename, $searchparameter);
+            $result = $query->result_array();
+        }
+        catch(Exception $ex) {
+            echo $ex->getMessage();
+        }
+        return $result;
+    }
 }

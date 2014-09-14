@@ -10,9 +10,9 @@ class Home extends MY_Controller
 		
 	}
 
-	function index()
+	function index($verification = null)
 	{
-		if(empty($this->session->userdata('user_data'))){
+		if(!($this->session->userdata('user_data'))){
 		$default = array(
                    'login_status'  => 'FALSE'
                );
@@ -30,12 +30,6 @@ class Home extends MY_Controller
 
 		$sess_data = $this->session->all_userdata();
 		$session_id = $this->session->userdata('session_id');
-		// echo $session_id."</br></br>";
-		//$this->session->sess_destroy();
-
-		// echo "<pre>"; print_r($sess_data);echo "</pre>";exit;
-		// uncomment this to view session data
-		// exit;
         $this->load->view('homepage',$data);
 	}
 
@@ -52,6 +46,25 @@ class Home extends MY_Controller
 
 	public function login(){
 		$result = $this->registration->verification();
+		if ($result == 'VERIFICATION_ERROR') {
+			$default = array(
+                   'login_status'  => 'FALSE'
+               );
+        $this->session->set_userdata($default);
+        $data['login_status'] = 'FALSE';
+        $data['login_info'] = "The password you entered is invalid. ";
+        $this->load->view('homepage',$data);
+		}elseif ($result == 'UNREGISTERED') {
+			$result = $this->registration->verification();
+			$default = array(
+                   'login_status'  => 'FALSE'
+               );
+        $this->session->set_userdata($default);
+        $data['login_status'] = 'FALSE';
+        $data['login_info'] = "You seem not to be registered in our system. Please click on the register button ";
+        $this->load->view('homepage',$data);
+		}
+		//echo $result;exit;
 	}
 
 	public function logout(){

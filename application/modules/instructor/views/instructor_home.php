@@ -129,7 +129,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                                <span><?php echo ($this->session->userdata('full_name'));?><i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -212,11 +212,11 @@
                             </a>
                         </li>
                         <li>
-                        	<a href = ""><i class = "fa fa-upload"></i> <span>Upload Notes</a></span>
+                        	<a id = "un" style = "cursor: pointer;"><i class = "fa fa-upload"></i> <span>Upload Notes</a></span>
                         </li>
                         <li>
                             <a href="<?php echo base_url() .'videos'?>">
-                                <i class="fa fa-videos"></i>
+                                <i class="fa fa-video-camera"></i>
                                 <span>Videos</span>
                             </a>
                         </li>
@@ -384,6 +384,7 @@
                                             <label for="message">Message</label>
                                             <textarea type="password" class="form-control" id="message" placeholder="Type message here" name="message"></textarea>
                                         </div>
+                                        <div><span id = "result"></span></div>
                                     </div><!-- /.box-body -->
 
                                     <div class="box-footer">
@@ -399,11 +400,98 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
+        <div id="upload_notes" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"><i class = "ion ion-ios7-paper-outline"></i> Upload Notes</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form enctype = "multipart/form-data" action = "<?php echo base_url() .'instructor/upload_item'?>" type = "POST" id = "notes_upload">
+                        <!-- <form> -->
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="filename">Save As</label>
+                                            <input type="text" class="form-control" id="filename" placeholder="Enter File Name" name = "filename">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Choose a Category</label>
+                                            <select name = "category" class = "form-control">
+                                                <option value = "">Choose a Category</option>
+                                                <option value = "sexuality">Human Sexuality</option>
+                                                <option value = "freedom">Human Freedom</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="choosefile">File input</label>
+                                            <input type="file" id="fileSelect" name ="files[]" >
+                                        </div>
+                                    </div><!-- /.box-body -->
+                                     <div class="box-footer">
+                                       <input type = "hidden" name = "category" value = "notes" />
+                                            <button class="btn btn-primary" id = "upload-button"><i class = "fa fa-upload" ></i> <span>Upload<span></button>
+                                        </div>
+                                    </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
         <script src="<?php echo base_url().'assets/js/jquery.js'?>" type="text/javascript"></script>
+        <script>
+            // $("#upload-button").click(function (){
+            //     var form = document.getElementById('notes_upload');
+            //     var fileSelect = document.getElementById('fileSelect');
+            //     var uploadButton = document.getElementById('upload-button');
+
+            //     // alert(form + ' ' + fileSelect + ' ' + uploadButton);
+
+            //     form.onsubmit = function(event) {
+            //         event.preventDefault();
+
+            //         // Update button text.
+            //         uploadButton.innerHTML = '<i class = "fa fa-refresh fa-spin"></i> Uploading...';
+            //         // Get the selected files from the input.
+            //         var files = fileSelect.files;
+            //         // Create a new FormData object.
+            //         var formData = new FormData();
+            //         // Loop through each of the selected files.
+            //         for (var i = 0; i < files.length; i++) {
+            //           var file = files[i];
+
+            //           // Check the file type.
+            //           if (!file.type.match('image.*')) {
+            //             continue;
+            //           }
+
+            //           // Add the file to the request.
+                      
+            //           formData.append('files[]', file, file.name);
+            //         }
+            //         // Set up the request.
+            //         var xhr = new XMLHttpRequest();
+            //         // console.log(xhr);
+            //         // Open the connection.
+            //         xhr.open('POST', 'localhost/philosophy/instructor/upload_item', true);
+            //         // Set up a handler for when the request finishes.
+            //         xhr.onload = function () {
+            //           if (xhr.status === 200) {
+            //             // File(s) uploaded.
+            //             console.log('uploaded');
+            //             uploadButton.innerHTML = 'Upload';
+            //           } else {
+            //             console.log('An error occurred!');
+            //           }
+            //         };
+            //         }
+            // });
+        </script>
         <!-- Bootstrap -->
         <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
         <!-- Morris

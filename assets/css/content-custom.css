@@ -5,4 +5,22 @@ width: 300px;
 .panel-body{
 	float: right;
 }
+.fixed{
+	position: fixed;
+}
+.ui.labeled.icon.buttons .button, .ui.labeled.icon.button{
+	position: fixed;
+}
+
+.ui.menu .item{
+	font-size: 3em;
+
+
+}
+
+.ui.menu.item{
+}
 /*END OF CUSTOM FLAT UI*/
+.toggle-button{
+	top:60px;
+}

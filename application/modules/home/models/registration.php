@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Registration extends CI_Model {
+class Registration extends MY_Model {
 
     function __construct()
     {
@@ -41,14 +41,15 @@ class Registration extends CI_Model {
                    'email'     => $user_email,
                    'login_status' => 'TRUE',
                    'user_data' => $user_name,
-                   'login_info' => $login_msg
+                   'login_info' => $login_msg,
+                   'full_name' => $full_name
 
                );
 
         $this->session->set_userdata($newdata);
         
         }else{
-            echo "REGISTER FOR WHO?";exit;
+            echo "REGISTRATION ERROR";exit;
         };
 
         redirect('home/index');
@@ -58,10 +59,11 @@ class Registration extends CI_Model {
     }
 
     function verification(){
-       $username = $_POST['username'];
-       $password = $_POST['password'];
-
         $user_table = array();
+        $log_data = array();
+        $details_user = '';
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         $u_table = $this->db->get('users');
 
         $results = $u_table->result_array();
@@ -70,23 +72,78 @@ class Registration extends CI_Model {
             if(($user_details['email'] == $username )|| ($user_details['user_name'] == $username))
             {
                 if ($user_details['pwd'] == $password) {
-                    echo "SUCESSFUL LOGIN";
-                    $login_status = array(
+                   // echo "SUCCESSFUL LOGIN";
+                    if ($user_details['user_type'] == 'student') {
+                       $details_user = $this->registration->getvaluesby('members',  array('user_id' => $user_details['id']));
+                       $fname = $details_user['fname'];
+                       $lname = $details_user['lname'];
+                       $email = $details_user['email'];
+                        $login_status = array(
                         'login_status' => 'TRUE',
                         'user_data' => $username,
-                        'login_info' => 'Logged in as: '. $username
+                        'login_info' => 'Logged in as: '. $username,
+                        'fname' => $fname,
+                        'lname' => $lname,
+                        'email' =>$email
                         );
+                    
+                    $log_data_ = array('user_id' => $user_details['id'] ,'user_email' => $email );
+                    array_push($log_data, $log_data_);
+                    $this ->db->insert_batch('logs',$log_data);
+ 
                     $this->session->set_userdata($login_status);
                     redirect('home/index');
+                    }
+                    else if($user_details['user_type'] == 'member')
+                    {
+                         $details_user = $this->registration->getvaluesby('instructors',  array('user_id' => $user_details['id']));
+                         
+                    }
+                    else if($user_details['user_type'] == 'admin')
+                    {
+                         $details_user = $this->registration->getvaluesby('members',  array('user_id' => $user_details['id']));
+                       //echo "<pre>";print_r($details_user); echo "</pre>";exit;
+                       $fname = $details_user[0]['fname'];
+                       $lname = $details_user[0]['sname'];
+                       $email = $details_user[0]['email'];
+                        $login_status = array(
+                        'login_status' => 'TRUE',
+                        'user_data' => $username,
+                        'login_info' => 'Logged in as: '. $username,
+                        'fname' => $fname,
+                        'lname' => $lname,
+                        'email' =>$email
+                        );
+
+                    $log_data_ = array('user_id' => $user_details['id'] ,'user_email' => $email );
+                    array_push($log_data, $log_data_);
+                    $this ->db->insert_batch('logs',$log_data);
+
+
+                    $this->session->set_userdata($login_status);
+                    redirect('admin/index');
+                    }
+
                 }
                 else {
-                    echo "PASSWORD WRONG";
+                    return "VERIFICATION_ERROR";
                     break;
                 }
             }
+            else {
+                    return "UNREGISTERED";
+                    break;
+                }
         //echo "<pre>";print_r($user_details);echo "</pre>";
            
         }
+    }//end of verification
+
+    function data_collection(){
+        $collected_data = array();
+        $collected_data['total_members'] = $this-> db -> count_all('members');
+        $collected_data['total_instructors'] = $this -> db -> count_all('instructors');
+        return $collected_data;
     }
 
 }

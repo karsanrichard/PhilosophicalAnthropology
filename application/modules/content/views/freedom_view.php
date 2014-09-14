@@ -4,8 +4,8 @@
 		<link href="<?php echo base_url().'assets/Flat-UI/bootstrap/css/bootstrap.css' ?>" rel="stylesheet">
 	    <!-- Loading Flat UI -->
 	    <link href="<?php echo base_url().'assets/Flat-UI/css/flat-ui.css' ?>" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/content-custom.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/semantic/packaged/css/semantic.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/content-custom.css">
 		
 		<style type="text/css">
 			
@@ -43,29 +43,65 @@
 					</div>
 				</div>
 			</nav>
-			<div id="">
-				<h3>Human Freedom</h3>
-				<div id="content">
-				<div class = "navbar-header">
-					<div class="ui floating sidebar">
-						<a class="menu-links1" href="#maneno_1">
+<!-- 
+			<div id="nav-menu" class="ui red vertical demo sidebar menu">
+				  <a class="item">
+				    <i class="home icon"></i>
+				    Home
+				  </a>
+				  <a class="active item">
+				    <i class="heart icon"></i>
+				    Current Section
+				  </a>
+				  <a class="item">
+				    <i class="facebook icon"></i>
+				    Like us on Facebook
+				  </a>
+				  <div class="item">
+				    <b>More</b>
+					    <div class="menu">
+					      <a class="item">About</a>
+					      <a class="item">Contact Us</a>
+					    </div>
+  			</div>
+			</div> -->
+
+			<div id="nav-menu" class="ui vertical sidebar menu">
+					<h4>Menu</h4>
+					<h5>Select Option: </h5>
+						<a class="item menu-links1" href="#maneno_1">
 						The Nature of Freedom
 						</a>
 						</br>
-						<a class="menu-links2" href="#maneno_2">
+						<a class="item menu-links2" href="#maneno_2">
 						Types of Freedom
 						</a>
 						</br>
 
-						<a class="menu-links3" href="#maneno_3">
+						<a class="item menu-links3" href="#maneno_3">
 						Conclusion
 						</a>
-						<!-- Conclusion: -->
+						Conclusion:
 						</br>
 
-					</div>
+			</div>
+
+
+			<div class="ui secondary labeled  icon toggle button fixed toggle-button">
+				<i class="reorder icon"></i>
+					 Sidebar
+				</div>
+
+
+			<div id="freedom-content">
+				<h3>Human Freedom</h3>
+				<!-- <div id="content"> -->
+				<!-- <div class = "navbar-header"> -->
+					
+
 
 				<div id="maneno_1" class="fullscreen1">
+				<h3>The Nature of Freedom</h3>
 					<p>If we stop to think for a moment we will realize that we have all had the experience of freedom; every time we need to choose between one thing and another (one dish or another, one film or another) we are exercising our freedom and we are taking a decision which affects ourselves as persons.</p>
 					<p>Freedom is a property of the human being as such; not just the will is free, rather the whole person is free. The whole person will taste the chosen dish, the whole person will watch the chosen movie. Freedom is the characteristic of the human person that permits him to direct his own acts towards attaining a given goal that he has chosen thanks to the fact that he has intellect and will.</p>
 					<ul>
@@ -87,6 +123,7 @@
 				</div>
 
 				<div id="maneno_2" class="fullscreen2">
+				<h3>Types of Freedom</h3>
 					<p>Philosophers have distinguished what they call the four dimensions of freedom: fundamental freedom and freedom for choice, which characterize the person as such, along with moral freedom and social freedom which are variable according to the personal and social circumstances.</p>
 					<p><strong>Fundamental or constitutive freedom:</strong> A characteristic of the human person as such, by which he is open to the real world, can know and love it and move himself, self-determine himself, to tend towards some good thing freely.</p>
 					<ul>
@@ -156,49 +193,12 @@
 				</div>
 
 				<div id="maneno_3" class="fullscreen3">
+				<h3>Conclusion</h3>
 								<p><strong>Freedom</strong> is:-</p>
 								<p>Naturally received by the human person with the gift of life: fundamental freedom and freedom as choice.</p>
 								<p>Acquired by the person through their free activity: moral freedom (virtues).</p>
 								<p>Received by the person from others: social and political freedom</p>
 							</div>
-
-
-				<div class="panel-group mani" id="accordion">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-							</h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse ">
-							
-						</div>
-					</div>
-					
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-								Types of Freedom
-								</a>
-							</h4>
-						</div>
-						<div id="collapseTwo" class="panel-collapse collapse">
-							
-						</div>
-					</div>
-					<div class="panel panel-default">
-    					<div class="panel-heading">
-							<h3 class="panel-title">
-								 <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-								Conclusion:
-								</a>
-							</h3>
-						</div>
-						<div id="collapseThree" class="panel-collapse collapse">
-							
-						</div>
-					</div>
-					</div>
 
 					<div id="aside" class="aside">
 						<h5>Articles on Human Freedom</h5>

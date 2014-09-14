@@ -1,3 +1,10 @@
+<?php 
+$fname = $this->session->userdata('fname');
+$lname = $this->session->userdata('lname');
+$email = $this->session->userdata('email');
+$full_name = $fname.' '.$lname;
+// print_r($statistics['total_members']);exit;
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -240,15 +247,15 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                                <span><?php echo $full_name?> <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                                     <p>
-                                        Jane Doe - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        <?php echo $full_name ?>  - Admin
+                                        <small>Email: <?php echo $email ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -269,7 +276,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="<?php echo base_url().'home/logout'; ?>" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -289,7 +296,7 @@
                             <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hello, <?php echo $fname; ?></p>
 
                             <a href="#"><i class="glyphicon glyphicon-ok-circle text-success"></i> Online</a>
                         </div>
@@ -387,10 +394,10 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        150
+                                       <?php echo $statistics['total_members']; ?>
                                     </h3>
                                     <p>
-                                        Members
+                                        Member(s)
                                     </p>
                                 </div>
                                 <div class="icon">
@@ -406,10 +413,10 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        53
+                                        <?php echo $statistics['total_instructors']; ?>
                                     </h3>
                                     <p>
-                                        Instructors
+                                        Instructor(s)
                                     </p>
                                 </div>
                                 <div class="icon">

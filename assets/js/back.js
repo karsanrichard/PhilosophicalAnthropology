@@ -1,14 +1,24 @@
 $(document).ready(function(){
-	
+	$('#result-alert').hide();
+	$('#un').click(function(){
+		$("#upload_notes").modal('show');
+	});
+	$('#sendError').click(function(){
+	        // console.log('button clicked');
+	    var form = document.getElementById('instruct');
+	    var r = document.getElementById('result');
+	    console.log(r);
+	    // alert(form);
+	    form.onsubmit = function(event) {
+	    event.preventDefault();
+
+	    r.innerHTML = '<i class = "fa fa-refresh fa-spin"></i> Working...';
+
+	    var data = $('#instruct :input').serializeArray();
+	    // console.log(data);
+	    $.post($('#instruct').attr('action'), data, function(info){
+	    	$("#result").html(info);
+	    });
+	}
+	});
 });
-
-function postError()
-{
-	var formData = $('#instruct').serializeArray();
-	var URL = $('#instruct').attr('action');
-	$.post(URL, formData, function(data, textStatus, jqXHR){
-
-	}).fail(function(data, textStatus, error){});
-	// alert(URL);
-	// $.post("instructors/send_error");
-}
