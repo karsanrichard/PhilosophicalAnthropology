@@ -34,36 +34,12 @@
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
-        <header class="header">
-            <a href="../../index.html" class="logo">
-                <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                404 Error
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-            </nav>
-        </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        404 Error Page
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li class="active">404 error</li>
-                    </ol>
-                </section>
 
                 <!-- Main content -->
                 <section class="content">
