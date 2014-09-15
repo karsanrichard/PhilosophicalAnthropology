@@ -29,6 +29,13 @@ class Admin extends MY_Controller
 
 	}
 
+	public function members()
+	{
+		$data['members'] = $this->admin_model->get_members();
+
+		$this->load->view('members_view', $data);
+	}
+
 	public function add_instructor()
 	{
 		$default_password = $this->my_hash($this->config->item('instructors_default'));

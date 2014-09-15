@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Admin | Dashboard</title>
+        <title>Admin | Members</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="<?php echo base_url().'assets/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet" type="text/css" />
@@ -306,7 +306,7 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
+                        <li >
                             <a href="<?php echo base_url(). 'admin'?>">
                                 <i class="fa fa-tachometer"></i> <span>Home</span>
                             </a>
@@ -316,8 +316,8 @@
                                 <i class="fa fa-mortar-board"></i> <span>Instructors</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="<?php echo base_url(). 'admin/members'?>">
+                        <li class="active">
+                            <a href="javascript:void();" onclick="members()">
                                 <i class="fa fa-users"></i><span>Members</span>   
                             </a>
                         </li>
@@ -359,12 +359,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
+                        Members Details
                         <small>Control panel</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li class="active">Members</li>
                     </ol>
                 </section>
 
@@ -373,150 +373,120 @@
 
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>
-                                        150
-                                    </h3>
-                                    <p>
-                                        Members
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-stalker"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>
-                                        53
-                                    </h3>
-                                    <p>
-                                        Instructors
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>
-                                        44
-                                    </h3>
-                                    <p>
-                                        Users
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>
-                                        65
-                                    </h3>
-                                    <p>
-                                        Questions
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
+                                               
                     </div><!-- /.row -->
 
                     <!-- Main row -->
                     <div class="row">
                         <!-- Left col -->
-                        <section class="col-lg-7 connectedSortable">                                                      
-
-                            <!-- quick email widget -->
-                            <div class="box box-info">
-                                <div class="box-header">
-                                    <i class="fa fa-envelope"></i>
-                                    <h3 class="box-title">Quick Email</h3>
-                                    <!-- tools box -->
-                                    <div class="pull-right box-tools">
-                                        <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                                    </div><!-- /. tools -->
-                                </div>
-                                <form action="<?php echo base_url(). 'admin/email_details'?>" method="post">
-                                    <div class="box-body">
-                                        
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" name="recipient" placeholder="Email to:"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="subject" placeholder="Subject"/>
-                                            </div>
-                                            <div>
-                                                <textarea class="textarea" name = "message" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                            </div>
-                                    </div>
-                                    <div class="box-footer clearfix">
-                                        <button class="pull-right btn btn-default" id="sendEmail" type = "submit">Send <i class="fa fa-arrow-circle-right"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </section><!-- /.Left col -->
-                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-5 connectedSortable">                            
+                        <section class="col-lg-11 connectedSortable">                            
 
                             <!-- Calendar -->
-                            <div class="box box-solid bg-green-gradient">
+                            <div class="box box-solid bg-blue-gradient">
                                 <div class="box-header">
-                                    <i class="fa fa-calendar"></i>
-                                    <h3 class="box-title">Calendar</h3>
+                                    <i class="ion ion-person-add"></i>
+                                    <h3 class="box-title">Members Information</h3>
                                     <!-- tools box -->
                                     <div class="pull-right box-tools">
                                         <!-- button with a dropdown -->
-                                        <div class="btn-group">
-                                            <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                                            <ul class="dropdown-menu pull-right" role="menu">
-                                                <li><a href="#">Add new event</a></li>
-                                                <li><a href="#">Clear events</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">View calendar</a></li>
-                                            </ul>
-                                        </div>
+                                        
                                         <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>                                        
+                                                                                
                                     </div><!-- /. tools -->
                                 </div><!-- /.box-header -->
-                                <div class="box-body no-padding">
-                                    <!--The calendar -->
-                                    <div id="calendar" style="width: 100%"></div>
+                                <div class="box-body yes-padding">
+                                <?php
+                                    if ($members != null) {
+                                        
+                                ?>
+                                        <table style="font-size:100%" id="" class="table table-bordered table-responsive">
+                                        <thead>
+                                            <tr>
+                                               <td rowspan="2">#</td>
+                                                <td rowspan="2">First Name</td>
+                                                <td rowspan="2">Second Name</td>
+                                                <td rowspan="2">Other Name</td>
+                                                <td rowspan="2">Email</td>
+                                                <td rowspan="2">Status</td>
+                                                <td colspan="2">Action</td>
+                                            </tr>
+                                             <tr>
+                                                <td>Deactivate</td>
+                                                <td>Edit</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                            $i=1;
+                                            foreach ($members as $value) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $value['fname']; ?></td>
+                                                <td><?php echo $value['sname']; ?></td>
+                                                <td><?php echo $value['onames']; ?></td>
+                                                <td><?php echo $value['email']; ?></td>
+                                            <?php
+                                                if ($value['status'] == 1) {
+                                                    $class = "glyphicon glyphicon-ok-sign";
+                                                    $color = "#34AE11";
+                                                 } else if ($value['status'] == 0) {
+                                                    $class = "glyphicon glyphicon-remove-sign";
+                                                    $color = "#F13A3A";
+                                                 }
+                                                  
+                                            ?>
+                                                <td>
+                                                    <center>
+                                                        <span class="<?php echo $class;?>" style="color: <?php echo $color; ?>" ></span>
+                                                    </center>
+                                                </td>
+                                                <td>*******</td>
+                                                <td>*******</td>
+                                            </tr>
+                                        <?php
+                                           $i++;
+                                            }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                <?php
+                                    } else {
+                                ?>
+                                         <table style="font-size:100%" id="" class="table table-bordered table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <td rowspan="2">#</td>
+                                                <td rowspan="2">First Name</td>
+                                                <td rowspan="2">Second Name</td>
+                                                <td rowspan="2">Other Name</td>
+                                                <td rowspan="2">Email</td>
+                                                <td rowspan="2">Status</td>
+                                                <td colspan="2">Action</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="8">No data in this table....</td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <?php
+                                    }
+                                    
+                                ?>
+                                    
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->                            
 
                         </section><!-- right col -->
+                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                       
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
@@ -524,8 +494,7 @@
         </div><!-- ./wrapper -->
 
         <!-- add new calendar event modal -->
-        
-        
+
 
 
         <!-- jQuery 2.0.2 -->
@@ -562,6 +531,11 @@
         <!-- Admin for demo purposes -->
         <script src="<?php echo base_url().'assets/js/admin/demo.js'?>" type="text/javascript"></script>
 
-        
+        <script type="text/javascript">
+        function members () {
+            $('#membersDiv').modal('show');
+        }
+        </script>
+
     </body>
 </html>

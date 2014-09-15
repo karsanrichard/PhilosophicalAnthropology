@@ -29,6 +29,28 @@ class Admin_model extends MY_Model
 		return $instructors->result_array();
 	}
 
+	public function get_members()
+	{
+		$sql = "SELECT
+						`members`.`fname`,
+						`members`.`sname`,
+						`members`.`onames`,
+						`members`.`dob`,
+						`members`.`email`,
+						`members`.`user_id`,
+						`users`.`id`,
+						`users`.`status`
+				FROM
+						`members`
+					LEFT JOIN `users`
+						ON `members`.`user_id` = `users`.`id`";
+
+		$members = $this->db->query($sql);
+		// $members = $members->result_array();
+		// print_r($members); die();
+		return $members->result_array();
+	}
+
 	public function add_Instructors($default_password)
 	{
 		
