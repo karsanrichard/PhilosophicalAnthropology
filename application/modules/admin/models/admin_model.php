@@ -91,6 +91,7 @@ class Admin_model extends MY_Model
 
 	public function login_credentials($username, $password,$email)
 	{
+		$username = strtolower($username);
 			$logins	 = "INSERT INTO
 									`users`
 								VALUES
