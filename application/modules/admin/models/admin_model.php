@@ -29,6 +29,28 @@ class Admin_model extends MY_Model
 		return $instructors->result_array();
 	}
 
+	public function get_members()
+	{
+		$sql = "SELECT
+						`members`.`fname`,
+						`members`.`sname`,
+						`members`.`onames`,
+						`members`.`dob`,
+						`members`.`email`,
+						`members`.`user_id`,
+						`users`.`id`,
+						`users`.`status`
+				FROM
+						`members`
+					LEFT JOIN `users`
+						ON `members`.`user_id` = `users`.`id`";
+
+		$members = $this->db->query($sql);
+		// $members = $members->result_array();
+		// print_r($members); die();
+		return $members->result_array();
+	}
+
 	public function add_Instructors($default_password)
 	{
 		
@@ -43,6 +65,8 @@ class Admin_model extends MY_Model
 		$username		= $first_name.".".$second_name;
 		$password 		= $default_password;
 
+		$new_user_id 	= $this->login_credentials($username, $password,$email);
+
 		$details = "INSERT INTO 
 								`instructors`
 							VALUES
@@ -56,18 +80,16 @@ class Admin_model extends MY_Model
 										'$location',
 										'$email',
 										'$phone',
-										'1',
+										'$new_user_id',
 										'1'
 									)";
 
 		// echo $details; 
 		$insert = $this->db->query($details);
-		$this->login_credentials($username, $password);
-	
-		
+			
 	}
 
-	public function login_credentials($username, $password)
+	public function login_credentials($username, $password,$email)
 	{
 			$logins	 = "INSERT INTO
 									`users`
@@ -75,9 +97,16 @@ class Admin_model extends MY_Model
 										(
 											'NULL',
 											'$username',
-											'$password'
+											'$email',
+											'instructor',
+											'$password',
+											'timestamp'
 										)";
 		$this->db->query($logins);
+
+		$new_user_id = $this -> db -> insert_id();
+
+		return $new_user_id;
 	}
 
 	function store_sent_email($recepient, $subject, $message, $tim)
