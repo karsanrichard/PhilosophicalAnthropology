@@ -129,15 +129,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span><?php echo ($this->session->userdata('fname'));?><i class="caret"></i></span>
+                                <span><?php echo ($this->session->userdata('full_name'));?><i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                                     <p>
-                                    <?php echo ($this->session->userdata('user_data'));?>
-                                        Jane Doe - Web Developer
+                                   <?php echo ($this->session->userdata('full_name'));?> - Iinstructor
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
@@ -179,7 +178,7 @@
                             <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hello, <?php echo ($this->session->userdata('fname'));?></p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>

@@ -93,5 +93,27 @@ class Admin_model extends MY_Model
 
 		$insert = $this->db->insert('mailerlog', $emails); 
     }
+
+    function getErrors()
+    {
+    	$errors = array();
+
+    	$query = $this->db->query("SELECT count(error_id) AS errors FROM error_reports WHERE looked_at = 0 LIMIT 1");
+    	$result = $query->result_array();
+
+    	return $result[0]['errors'];
+    }
+
+    function getUnreadErrors()
+    {
+    	$unreadErrors = array();
+    	$query = $this->db->query("SELECT * FROM error_reports WHERE looked_at = 0 ORDER BY date DESC");
+    	$results = $query->result_array();
+
+    	foreach ($results as $key => $value) {
+    		$unreadErrors[$value['error_id']] = $value;
+    	}
+    	return $unreadErrors;
+    }
 }
 ?>

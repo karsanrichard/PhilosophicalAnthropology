@@ -36,7 +36,7 @@ class Home extends MY_Controller
 		// echo "<pre>"; print_r($sess_data);echo "</pre>";exit;
 		// uncomment this to view session data
 		// exit;
-        $this->load->view('homepage',$data);
+        $this->load->view('new_home',$data);
 	}
 
 	public function log_in_status(){
@@ -72,6 +72,11 @@ class Home extends MY_Controller
 
 			redirect("home");
 		
+	}
+
+	public function contact()
+	{
+		echo "This is done";
 	}
 
 }

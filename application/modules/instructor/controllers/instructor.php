@@ -2,6 +2,7 @@
 
 class Instructor extends MY_Controller
 {
+	public $data = array();
 	function __construct()
 	{
 		parent::__construct();
@@ -11,7 +12,8 @@ class Instructor extends MY_Controller
 	function index()
 	{
 		// print_r($this->session->userdata('fname'));die;
-		$this->load->view('instructor_home');
+		$data['values'] = '';
+		$this->load->view('instructor_home', $data);
 	}
 
 	function upload_item()

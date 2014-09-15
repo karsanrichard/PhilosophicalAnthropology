@@ -36,4 +36,11 @@ class MY_Controller extends MX_Controller
 		// echo "Am the one";
 		$this->admin_model->add_error();
 	}
+
+	public function count_all($table_name)
+	{
+		$n;
+		$n = $this->admin_model->getCount($table_name);
+		return $n;
+	}
 }
