@@ -70,7 +70,7 @@ class Admin_model extends MY_Model
 	public function login_credentials($username, $password)
 	{
 			$logins	 = "INSERT INTO
-									`user`
+									`users`
 								VALUES
 										(
 											'NULL',

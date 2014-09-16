@@ -8,16 +8,16 @@ class Registration extends MY_Model {
         parent::__construct();
     }
 
-    function member_reg(){
+    function member_reg($fname,$sname,$onames,$dob,$email,$user_name,$pwd){
         $mem_data = array();
         $user_info = array();
-        $fname = $_POST['fname'];
-        $sname = $_POST['sname'];
-        $onames = $_POST['onames'];
-        $dob = $_POST['dob'];
-        $email =  $_POST['email'];
-        $user_name =  $_POST['user_name'];
-        $pwd =  $_POST['pwd'];
+        // $fname = $_POST['fname'];
+        // $sname = $_POST['sname'];
+        // $onames = $_POST['onames'];
+        // $dob = $_POST['dob'];
+        // $email =  $_POST['email'];
+        // $user_name =  $_POST['user_name'];
+        // $pwd =  $_POST['pwd'];
 
         $user_data=array('user_name' =>$user_name,'pwd' => $pwd,'email' => $email);
         array_push($user_info,$user_data);
@@ -64,9 +64,12 @@ class Registration extends MY_Model {
         $details_user = '';
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $password = $this->my_hash($password);
         $u_table = $this->db->get('users');
 
         $results = $u_table->result_array();
+
+        // print_r($results); die();
  
         foreach ($results as $user_details) {
             if(($user_details['email'] == $username )|| ($user_details['user_name'] == $username))
@@ -84,6 +87,7 @@ class Registration extends MY_Model {
                         'login_info' => 'Logged in as: '. $username,
                         'fname' => $fname,
                         'lname' => $lname,
+                        'full_name' => $fname . ' ' . $lname,
                         'email' =>$email
                         );
                     
@@ -92,11 +96,26 @@ class Registration extends MY_Model {
                     $this ->db->insert_batch('logs',$log_data);
  
                     $this->session->set_userdata($login_status);
-                    redirect('home/index');
+                    redirect('home');
                     }
-                    else if($user_details['user_type'] == 'member')
+                    else if($user_details['user_type'] == 'instructor')
                     {
                          $details_user = $this->registration->getvaluesby('instructors',  array('user_id' => $user_details['id']));
+                         $fname = $details_user['first_name'];
+                       $lname = $details_user['second_name'];
+                       $email = $details_user['email'];
+                        $login_status = array(
+                        'login_status' => 'TRUE',
+                        'user_data' => $username,
+                        'login_info' => 'Logged in as: '. $username,
+                        'fname' => $fname,
+                        'lname' => $lname,
+                        'full_name' => $fname . ' ' . $lname,
+                        'email' =>$email
+                        );
+                    $this->session->set_userdata($login_status);
+                    redirect('instructor');
+
                          
                     }
                     else if($user_details['user_type'] == 'admin')

@@ -41,7 +41,16 @@ class Home extends MY_Controller
 	}
 
 	public function member_registration(){
-		$this->registration->member_reg();
+        $fname = $_POST['fname'];
+        $sname = $_POST['sname'];
+        $onames = $_POST['onames'];
+        $dob = $_POST['dob'];
+        $email =  $_POST['email'];
+        $user_name =  $_POST['user_name'];
+        $pwd = $_POST['pwd'];
+        $pwd =  $this->my_hash($pwd);
+		
+    	$this->registration->member_reg($fname,$sname,$onames,$dob,$email,$user_name,$pwd);
 	}
 
 	public function login(){
@@ -64,7 +73,6 @@ class Home extends MY_Controller
         $data['login_info'] = "You seem not to be registered in our system. Please click on the register button ";
         $this->load->view('homepage',$data);
 		}
-		//echo $result;exit;
 	}
 
 	public function logout(){

@@ -234,4 +234,33 @@ class Uploads
     {
         return $this->isDeleted;
     }
+    /**
+     * @var string $category
+     *
+     * @Column(name="category", type="string", length=50, nullable=false)
+     */
+    private $category;
+
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     * @return Uploads
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

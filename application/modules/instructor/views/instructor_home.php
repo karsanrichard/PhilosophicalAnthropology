@@ -129,13 +129,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span><?php echo ($this->session->userdata('full_name'));?><i class="caret"></i></span>
+                                <span><?php echo ($this->session->userdata('fname'));?><i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                                     <p>
+                                    <?php echo ($this->session->userdata('user_data'));?>
                                         Jane Doe - Web Developer
                                         <small>Member since Nov. 2012</small>
                                     </p>
@@ -408,8 +409,10 @@
                         <h4 class="modal-title"><i class = "ion ion-ios7-paper-outline"></i> Upload Notes</h4>
                     </div>
                     <div class="modal-body">
-                        <form enctype = "multipart/form-data" action = "<?php echo base_url() .'instructor/upload_item'?>" type = "POST" id = "notes_upload">
+                    <?php //echo form_open_multipart(base_url().'instructor/upload_item');?>
+                        <form enctype = "multipart/form-data" action = "<?php echo base_url() .'instructor/upload_item'?>" method = "POST" id = "notes_upload">
                         <!-- <form> -->
+                         <?php //$attributes = array('id' => 'notes_upload'); ?>
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label for="filename">Save As</label>
@@ -425,12 +428,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="choosefile">File input</label>
-                                            <input type="file" id="fileSelect" name ="files[]" >
+                                            <input type="file" id="fileSelect" name ="files"/>
                                         </div>
                                     </div><!-- /.box-body -->
                                      <div class="box-footer">
-                                       <input type = "hidden" name = "category" value = "notes" />
-                                            <button class="btn btn-primary" id = "upload-button"><i class = "fa fa-upload" ></i> <span>Upload<span></button>
+                                       <input type = "hidden" name = "upload_category" value = "notes" />
+                                            <button class="btn btn-primary" id = "upload-button" type="submit"><i class = "fa fa-upload" ></i> <span>Upload<span></button>
                                         </div>
                                     </form>
                     </div>
@@ -445,52 +448,19 @@
         <!-- jQuery UI 1.10.3 -->
         <script src="<?php echo base_url().'assets/js/jquery.js'?>" type="text/javascript"></script>
         <script>
-            // $("#upload-button").click(function (){
-            //     var form = document.getElementById('notes_upload');
-            //     var fileSelect = document.getElementById('fileSelect');
-            //     var uploadButton = document.getElementById('upload-button');
+            $("#upload-button").click(function (){
+                // alert("clicked");
+                var form = document.getElementById('notes_upload');
+                var fileSelect = document.getElementById('fileSelect');
+                var uploadButton = document.getElementById('upload-button');
 
-            //     // alert(form + ' ' + fileSelect + ' ' + uploadButton);
-
-            //     form.onsubmit = function(event) {
-            //         event.preventDefault();
-
-            //         // Update button text.
-            //         uploadButton.innerHTML = '<i class = "fa fa-refresh fa-spin"></i> Uploading...';
-            //         // Get the selected files from the input.
-            //         var files = fileSelect.files;
-            //         // Create a new FormData object.
-            //         var formData = new FormData();
-            //         // Loop through each of the selected files.
-            //         for (var i = 0; i < files.length; i++) {
-            //           var file = files[i];
-
-            //           // Check the file type.
-            //           if (!file.type.match('image.*')) {
-            //             continue;
-            //           }
-
-            //           // Add the file to the request.
-                      
-            //           formData.append('files[]', file, file.name);
-            //         }
-            //         // Set up the request.
-            //         var xhr = new XMLHttpRequest();
-            //         // console.log(xhr);
-            //         // Open the connection.
-            //         xhr.open('POST', 'localhost/philosophy/instructor/upload_item', true);
-            //         // Set up a handler for when the request finishes.
-            //         xhr.onload = function () {
-            //           if (xhr.status === 200) {
-            //             // File(s) uploaded.
-            //             console.log('uploaded');
-            //             uploadButton.innerHTML = 'Upload';
-            //           } else {
-            //             console.log('An error occurred!');
-            //           }
-            //         };
-            //         }
-            // });
+               // form.onsubmit = function(event) {
+               //      event.preventDefault();
+               //      uploadButton.innerHTML = '<i class = "fa fa-spinner fa-spin"></i> Working...';
+               //      var data = $('#notes_upload :input #fileSelect').serializeArray();
+               //      console.log(data);
+               //  }
+            });
         </script>
         <!-- Bootstrap -->
         <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
@@ -501,6 +471,8 @@
         <!--<script src="<?php echo base_url().'assets/js/plugins/asap/asap.min.js'?>" type="text/javascript"></script>-->
         <!-- Sparkline -->
         <script src="<?php echo base_url().'assets/js/plugins/sparkline/jquery.sparkline.min.js'?>" type="text/javascript"></script>
+        <script src="<?php echo base_url().'assets/js/dropzone.js'?>"></script>
+
         <!-- jvectormap -->
         <script src="<?php echo base_url().'assets/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'assets/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'?>" type="text/javascript"></script>
