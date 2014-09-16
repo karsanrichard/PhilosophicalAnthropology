@@ -22,3 +22,10 @@ $(document).ready(function(){
 	}
 	});
 });
+
+function getMessage(id)
+{
+	console.log(id);
+}
+
+

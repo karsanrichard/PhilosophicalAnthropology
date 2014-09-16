@@ -41,10 +41,11 @@ class MY_Model extends CI_Model
     {
         $subject = $this->input->post('subject');
         $message = $this->input->post('message');
+        $user = $this->session->userdata('full_name');
 
-        $sql = "INSERT INTO error_reports (subject, message, user_id) VALUES ('$subject', '$message', 1)";
+        $sql = "INSERT INTO error_reports (subject, message, user_id) VALUES ('$subject', '$message', '$user')";
         $insert = $this->db->query($sql);
-        echo "Error has been reported";
+        echo "Your Problem has been reported";
     }
 
     function getvaluesby($tablename, $searchparameter)
@@ -57,5 +58,16 @@ class MY_Model extends CI_Model
             echo $ex->getMessage();
         }
         return $result;
+    }
+
+    public function getCount($table)
+    {
+        $number = $this->db->count_all($table);
+        return $number;
+    }
+
+    public function getUserDetails($user_id)
+    {
+        
     }
 }

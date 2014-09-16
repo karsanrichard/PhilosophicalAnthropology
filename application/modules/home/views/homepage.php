@@ -1,4 +1,4 @@
-<?php //echo $verification_error;exit; ?>
+<?php //echo $login_info;exit; ?>
 <head>
 <meta name="author" content="Richard Seth Karsan|Joshua Bakasa|Chrispine Otaalo ">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap-theme.css">
@@ -96,7 +96,7 @@
 	<footer>
 		<small>&copy;Richard Seth Karsan | John Chrispine Otaalo | Bakasa Joshua (2014) This template is owned solely by OUR GROUP and can not be used or redistributed without purchase</small>
 		<div class="back-to-top">
-		<button type="button" onclick="scrollUp()" id="logout_button" disabled = "disabled" class="btn btn-default"><?php echo $login_info; ?> <span class = "glyphicon glyphicon-info-sign"></span></button>
+		<button type="button" onclick="scrollUp()" id="logout_button" disabled = "disabled" class="btn btn-default"><?php echo $login_info; ?> <span class = "glyphicon glyphicon-thumbs-up"></span></button>
 		<?php 
 			if ($login_status == 'TRUE') {
 				echo '
@@ -105,7 +105,6 @@
 
 				';
 			}elseif($login_status =='FALSE'){
-				
 				echo '
 				<button type="button" onclick="scrollUp()" id="login_button" class="btn btn-default"> Login / Register <span class = "glyphicon glyphicon-user"></span></button>
 				';
@@ -121,7 +120,6 @@
 <!-- end of container -->
 
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/home_custom.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/modernizr.js"></script>

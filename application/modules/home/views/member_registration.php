@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/home-custom.css">
 
 </head>
@@ -26,7 +25,7 @@
 		      	</div>
 
 		      	<div class="clear margin-bottom">
-		      	<input type="date" id="dob" required title = "Please enter date of birth" class="inputs dob" name="dob" placeholder="Date of Birth">
+		      	<input type="date" required title = "Please enter date of birth" class="inputs" name="dob" placeholder="Date of Birth">
 				
 				</div>
 
@@ -37,7 +36,7 @@
 
 		      <div class="modal-footer">
 
-		        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		        <button type="submit" class="btn btn-info">Register</button>
 		        <?php echo form_close(); ?>
 		      </div>
@@ -45,7 +44,6 @@
 
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/home_custom.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/modernizr.js"></script>
 </body>

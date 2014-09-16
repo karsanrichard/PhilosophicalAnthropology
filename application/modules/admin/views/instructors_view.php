@@ -57,7 +57,8 @@
 					<!-- Collect the nav links, forms and other content for toggling -->
 					<div class = "collapse navbar-collapse" id = "my-navigation">
 						<ul class = "nav navbar-nav">
-							<li><a href ="">Home</a></li>				
+							<li><a href ="<?php echo base_url('admin') ?>">Home</a></li>
+											
 							<li><a href="#menu-toggle" class="" id="menu-toggle">Hide/Show Side-bar</a></li>
 						</ul>
 					</div>

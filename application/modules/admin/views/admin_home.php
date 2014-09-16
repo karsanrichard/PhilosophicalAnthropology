@@ -1,10 +1,3 @@
-<?php 
-$fname = $this->session->userdata('fname');
-$lname = $this->session->userdata('lname');
-$email = $this->session->userdata('email');
-$full_name = $fname.' '.$lname;
-// print_r($statistics['total_members']);exit;
- ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,73 +52,14 @@ $full_name = $fname.' '.$lname;
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-envelope"></i>
-                                <span class="label label-success">4</span>
+                                <span class="label label-success"><?php echo $no_errors; ?></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
+                                <li class="header">You have <?php echo $no_errors; ?> messages</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image"/>
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li><!-- end message -->
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="<?php echo base_url().'assets/images/img/avatar2.png'?>" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    AdminLTE Design Team
-                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Developers
-                                                    <small><i class="fa fa-clock-o"></i> Today</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
+                                        <?php echo $errorlistsection; ?>
                                     </ul>
                                 </li>
                                 <li class="footer"><a href="#">See All Messages</a></li>
@@ -135,39 +69,14 @@ $full_name = $fname.' '.$lname;
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-warning-sign"></i>
-                                <span class="label label-warning">10</span>
+                                <span class="label label-warning"><?php echo $no_errors; ?></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
+                                <li class="header">You have <?php echo $no_errors; ?> notifications</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
-                                            </a>
-                                        </li>
+                                       <?php echo $errorlistsection; ?>
                                     </ul>
                                 </li>
                                 <li class="footer"><a href="#">View all</a></li>
@@ -247,15 +156,15 @@ $full_name = $fname.' '.$lname;
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span><?php echo $full_name?> <i class="caret"></i></span>
+                                <span>Jane Doe <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                                     <p>
-                                        <?php echo $full_name ?>  - Admin
-                                        <small>Email: <?php echo $email ?></small>
+                                        Jane Doe - Web Developer
+                                        <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -276,7 +185,7 @@ $full_name = $fname.' '.$lname;
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="<?php echo base_url().'home/logout'; ?>" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -296,7 +205,7 @@ $full_name = $fname.' '.$lname;
                             <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <?php echo $fname; ?></p>
+                            <p>Hello, Jane</p>
 
                             <a href="#"><i class="glyphicon glyphicon-ok-circle text-success"></i> Online</a>
                         </div>
@@ -323,19 +232,10 @@ $full_name = $fname.' '.$lname;
                                 <i class="fa fa-mortar-board"></i> <span>Instructors</span>
                             </a>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-users"></i>
-                                <span>Members</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                        <li>
+                            <a href="<?php echo base_url(). 'admin/members'?>">
+                                <i class="fa fa-users"></i><span>Members</span>   
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                            </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
@@ -349,15 +249,19 @@ $full_name = $fname.' '.$lname;
                             </ul>
                         </li>
                         <li>
+                            <a href = "#">
+                                <i class = "fa fa-cogs"></i> <span>Administration</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="pages/calendar.html">
                                 <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                <small class="badge pull-right bg-red">3</small>
                             </a>
                         </li>
                         <li>
                             <a href="pages/mailbox.html">
                                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                                <small class="badge pull-right bg-yellow">12</small>
+                                <small class="badge pull-right bg-yellow"><?php echo $no_errors; ?></small>
                             </a>
                         </li>
                         <li>
@@ -394,10 +298,10 @@ $full_name = $fname.' '.$lname;
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                       <?php echo $statistics['total_members']; ?>
+                                        <?php echo $no_members; ?>
                                     </h3>
                                     <p>
-                                        Member(s)
+                                        Members
                                     </p>
                                 </div>
                                 <div class="icon">
@@ -413,14 +317,14 @@ $full_name = $fname.' '.$lname;
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        <?php echo $statistics['total_instructors']; ?>
+                                        <?php echo $no_instructors; ?>
                                     </h3>
                                     <p>
-                                        Instructor(s)
+                                        Instructors
                                     </p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
+                                    <i class="fa fa-mortar-board"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
@@ -432,7 +336,7 @@ $full_name = $fname.' '.$lname;
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                        <?php echo $no_users; ?>
                                     </h3>
                                     <p>
                                         Users
@@ -451,7 +355,7 @@ $full_name = $fname.' '.$lname;
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        65
+                                        <?php echo $no_questions; ?>
                                     </h3>
                                     <p>
                                         Questions
@@ -482,22 +386,23 @@ $full_name = $fname.' '.$lname;
                                         <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                                     </div><!-- /. tools -->
                                 </div>
-                                <div class="box-body">
-                                    <form action="<?php echo base_url(). 'admin/email_details'?>" method="post">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="recipient" placeholder="Email to:"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="subject" placeholder="Subject"/>
-                                        </div>
-                                        <div>
-                                            <textarea class="textarea" name = "message" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                        </div>
-                                </div>
-                                <div class="box-footer clearfix">
-                                    <button class="pull-right btn btn-default" id="sendEmail" type = "submit">Send <i class="fa fa-arrow-circle-right"></i></button>
-                                    </form>
-                                </div>
+                                <form action="<?php echo base_url(). 'admin/email_details'?>" method="post">
+                                    <div class="box-body">
+                                        
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="recipient" placeholder="Email to:"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="subject" placeholder="Subject"/>
+                                            </div>
+                                            <div>
+                                                <textarea class="textarea" name = "message" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                            </div>
+                                    </div>
+                                    <div class="box-footer clearfix">
+                                        <button class="pull-right btn btn-default" id="sendEmail" type = "submit">Send <i class="fa fa-arrow-circle-right"></i></button>
+                                    </div>
+                                </form>
                             </div>
 
                         </section><!-- /.Left col -->
@@ -539,12 +444,15 @@ $full_name = $fname.' '.$lname;
         </div><!-- ./wrapper -->
 
         <!-- add new calendar event modal -->
+        
+        
 
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
         <script src="<?php echo base_url().'assets/js/jquery.js'?>" type="text/javascript"></script>
+        <script type="text/javascript" src = "<?php echo base_url().'assets/js/back.js'?>"></script>
         <!-- Bootstrap -->
         <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
         <!-- Morris.js charts -->
@@ -575,5 +483,6 @@ $full_name = $fname.' '.$lname;
         <!-- Admin for demo purposes -->
         <script src="<?php echo base_url().'assets/js/admin/demo.js'?>" type="text/javascript"></script>
 
+        
     </body>
 </html>
