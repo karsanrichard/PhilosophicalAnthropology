@@ -51,6 +51,44 @@ class Admin_model extends MY_Model
 		return $members->result_array();
 	}
 
+	public function get_mails()
+	{
+		$sql = "SELECT 
+						`recepients`,
+						`subject`,
+						`message`,
+						`date`
+				FROM
+						`mailerlog`";
+
+		$mails = $this->db->query($sql);
+
+		return $mails->result_array();
+	}
+
+	public function errors()
+	{
+		$sql = "SELECT
+						`ERR`.`subject`,
+						`ERR`.`message`,
+						`ERR`.`user_id`,
+						`ERR`.`date`,
+						`ERR`.`looked_at`,
+						`USS`.`id`,
+						`USS`.`user_name`
+
+				FROM
+						`error_reports` AS `ERR`
+					LEFT JOIN 
+								`users` AS `USS`
+						ON 
+								`ERR`.`user_id` = `USS`.`id`";
+
+		$errors = $this->db->query($sql);
+
+		return $errors->result_array();
+	}
+
 	public function add_Instructors($default_password)
 	{
 		

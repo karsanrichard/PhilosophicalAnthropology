@@ -240,32 +240,16 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-user"></i> <span>Users</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
-                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
-                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href = "#">
-                                <i class = "fa fa-cogs"></i> <span>Administration</span>
                             </a>
                         </li>
                         <li>
-                            <a href="pages/calendar.html">
-                                <i class="fa fa-calendar"></i> <span>Calendar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages/mailbox.html">
+                            <a href="<?php echo base_url().'admin/mail_box' ?>">
                                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
                                 <small class="badge pull-right bg-yellow"><?php echo $no_errors; ?></small>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo base_url('home/logout') ?>">
                                 <i class="fa fa-lock"></i> <span>Log Out</span>
                             </a>
                         </li>

@@ -48,6 +48,15 @@ class Admin extends MY_Controller
 		$this->load->view('members_view', $data);
 	}
 
+	public function mail_box($value='')
+	{
+		$data['mails'] = $this->admin_model->get_members();
+		$data['inbox'] = $this->admin_model->errors();
+		
+		$this->load->view('mail_box', $data);
+	}
+
+	
 	public function add_instructor()
 	{
 		$default_password = $this->my_hash($this->config->item('instructors_default'));
