@@ -64,7 +64,7 @@ class Registration extends MY_Model {
         $details_user = '';
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $password = $this->my_hash($password);
+        $password = md5($password);
         $u_table = $this->db->get('users');
 
         $results = $u_table->result_array();
@@ -73,8 +73,10 @@ class Registration extends MY_Model {
  
         foreach ($results as $user_details) {
             if(($user_details['email'] == $username )|| ($user_details['user_name'] == $username))
-            {
+            {   
+                // echo $user_details['pwd'];exit;
                 if ($user_details['pwd'] == $password) {
+                
                    // echo "SUCCESSFUL LOGIN";
                     if ($user_details['user_type'] == 'student') {
                        $details_user = $this->registration->getvaluesby('members',  array('user_id' => $user_details['id']));
