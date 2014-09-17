@@ -184,8 +184,15 @@ class Admin extends MY_Controller
 		
 		return $errorlistSection;
 	}
-}
 
+
+public function logout(){
+		$this ->session->sess_destroy();
+
+			redirect("/home/index");
+		
+		}
+	}
 ?>
 
 
