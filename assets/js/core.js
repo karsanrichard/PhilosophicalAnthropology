@@ -32,12 +32,12 @@ function runQuestions()
 
 function smile(data)
 {
-	console.log(data);
+	// console.log(data);
 	question_data = data;
 	test = _("test");
 	if (pos >= question_data.length)
 	{
-		test.innerHTML = "<h2>You got " + correct + " of " + question_data.length + " questions correct";
+		test.innerHTML = "<h4>You got " + correct + " of " + question_data.length + " questions correct";
 		_("test_status").innerHTML = ("Test Completed");
 		
 		pos = 0;
@@ -55,11 +55,11 @@ function smile(data)
 	};
 	_("test_status").innerHTML = "Question"+(pos+1)+" of " + question_data.length;
 	question = question_data[pos].question;
-	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML = "<h4>"+question+"</h4>";
 	test.innerHTML += formedchoice;
-	test.innerHTML += '<button class = "btn btn-info" onclick = "checkanswer()">Submit Answers</button>';
-
-	console.log(question);
+	test.innerHTML += '<input type = "hidden" name = "answeredquestionCode_'+pos+'" value = "'+question_data[pos]['questionCode']+'"/><button type = "submit" class = "btn btn-info" onclick = "checkanswer()">Submit Answers</button>';
+	// test.innerHTML += '<a class = "btn btn-info" onclick = "checkanswer()">Next Question</a>';
+	// console.log(question);
 
 }
 
@@ -72,9 +72,20 @@ function checkanswer()
 		}
 	}
 
-	if (choice == question_data[pos]['answer']) {correct++; console.log(correct);}
+	if (choice == question_data[pos]['answer']) {correct++;}
 	pos++;
-	runQuestions();
+
+	 var data = $('#submit').serializeArray();
+	 var form = document.getElementById('submit');
+	 
+	 form.onsubmit = function(event)
+	 {
+	 	event.preventDefault();
+	$.post($('#submit').attr('action'), data, function(info){
+		runQuestions();
+    });
+	}
+	
 	// console.log(choice);
 }
 function _(x)
