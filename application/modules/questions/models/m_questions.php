@@ -156,6 +156,7 @@ class M_questions extends MY_Model {
 
     function addAnswered()
     {
+        // print_r($this->input->post());
         $this->elements=array();
         $answered = $this->input->post();
         $user = $answered['useremail'];
@@ -255,5 +256,14 @@ class M_questions extends MY_Model {
 
             //end of batch condition
         }
+    }
+
+    public function getsanitizedquestions()
+    {
+        $query = "SELECT * FROM questions";
+        $result = $this->db->query($query);
+        $all_questions = $result->result_array();
+        
+        return $all_questions;
     }
 }

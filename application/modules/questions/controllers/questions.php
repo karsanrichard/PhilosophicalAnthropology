@@ -76,10 +76,45 @@ class Questions extends MX_Controller
 	function addAnswered()
 	{
 		$result = $this->m_questions->addAnswered();
-		if($result)
-		{
-			$questions = $this->m_questions->getSantizedAnswer();
-			print_r($questions);die;
+		// if($result)
+		// {
+		// 	$questions = $this->m_questions->getSantizedAnswer();
+		// }
+	}
+
+	function manage_questions()
+	{
+		$data['questionsection'] = $this->getAllQuestions();
+		$this->load->view('managequestions', $data);
+	}
+
+	function getAllQuestions()
+	{
+		$quest = '';
+		$all_questions = $this->m_questions->getsanitizedquestions();
+		$counter = 0;
+		foreach ($all_questions as $key => $question) {
+			$counter++;
+			$choices = explode(';', $question['choices']);
+			$quest .= '<tr><td>'.$counter.'</td><td>'.$question['question'].'</td><td>'.$question['question_category'].'</td><td><div><select class = "form-control">';
+			foreach ($choices as $choice) {
+				$quest .= '<option>'.$choice.'</option>';
+			}
+			$quest .= '</select></div></td>';
+
+			$answer = explode('_', $question['answer']);
+			$ans_key = $answer[1] - 1;
+			$the_answer = $choices[$ans_key];
+			$quest .= '<td>'.$the_answer.'</td><td>'.$question['created_on'].'</td><td><center><a href="javascript:void(null);" onclick="edit_question('.$question['question_id'] .')"><span class="glyphicon glyphicon-pencil" style="color: #70D3E9;"></span></a></center></td>';
+
+
 		}
+
+		return $quest;
+	}
+
+	function getAnswers()
+	{
+		$this->m_questions->getSantizedAnswer();
 	}
 }

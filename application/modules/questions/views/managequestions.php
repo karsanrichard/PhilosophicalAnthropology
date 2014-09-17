@@ -214,7 +214,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url() .'questions/set_questions'?>"><i class="fa fa-angle-double-right"></i> Set Questions</a></li>
-                                <li><a href="<?php echo base_url(). 'questions/manage_questions'?>"><i class="fa fa-angle-double-right"></i> Manage Questions</a></li>
+                                <li><a href="<?php echo base_url(). ''?>"><i class="fa fa-angle-double-right"></i> Manage Questions</a></li>
                             </ul>
                         </li>
                         <li>
@@ -252,43 +252,37 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Set Questions
+                        Manage Questions
                         <small>Control panel</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="<?php echo base_url() .'instructor'?>"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Set Questions</li>
+                        <li class="active">Questions</li>
+                        <li class="active">Manage Questions</li>
                     </ol>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
-                <form role="form" method = "POST" action = "add_questions">
-                    <div class="box-body">
-                        <div class="form-group">
-                            <label for="setcat">Please pick a category</label>
-                            <select name = "setcategory" required id = "setcat" class = "form-control">
-								<option value="">Select a Category</option>
-								<option value="freedom">Human Freedom</option>
-								<option value="sexuality">Human Sexuality</option>
-							</select>
-                        </div>
-                        <div class="form-group">
-                            <label for="setq">Type Question:</label>
-                            <input type = "text" id = "setq" name = "setquestion" placeholder = "Enter the question here" class = "form-control" required/>
-                        </div>
-                        <div class="form-group">
-                        	<label for = "noofchoice">Number of choices</label>
-                            <input type = "number" name = "choices" id = "noofchoice" required class = "form-control">
-                            <div id = "choices"></div>
-                        </div>
-                    </div><!-- /.box-body -->
-
-                    <div class="box-footer">
-                        <button type = "submit" name = "savequestion" class = "btn bg-olive btn-flat">Add Question</button>
-                    </div>
-                </form>
-
+                <table style="font-size:90%" id="" class="table table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                        <td rowspan="2"><center>#</center></td>
+                                        <td rowspan="2"><center>Question</center></td>
+                                        <td rowspan="2"><center>Category</center></td>
+                                        <td rowspan="2"><center>Choices</center></td>
+                                        <td rowspan = "2"><center>Answer</center></td>
+                                        <td colspan="2"><center>Actions</center></td>
+                                    </tr>
+                                    <tr>
+                                        <td><center>Status</center></td>
+                                        <td><center>Edit</center></td>
+                                    </tr>
+                                </thead>
+                                <tbody class="table striped">
+                                    <?php echo $questionsection ;?>
+                                </tbody>
+                            </table>
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
@@ -299,7 +293,7 @@
         <!-- jQuery UI 1.10.3 -->
         <script src="<?php echo base_url().'assets/js/jquery.js'?>" type="text/javascript"></script>
 <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
-<script type="text/javascript" src = "<?php echo base_url() . 'assets/js/core.js'?>"></script>
+<script type="text/javascript" src = "<?php echo base_url() . 'assets/js/manage.js'?>"></script>
         <!-- Morris
  	
  	.js charts -->
