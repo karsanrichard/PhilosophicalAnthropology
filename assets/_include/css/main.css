@@ -966,16 +966,17 @@ clear: both;
 	clear: both;
 }
 
-#login-form{
-	top: -50px;
+#login_form{
+	top: 20%;
 	left: 65%!important;
 	width: 2000px!important;
-	position: relative;
+	position: fixed!important;
+	z-index: 1002!important;
 }
 
 
-#login-form input,
-#login-form textarea {
+#login_form input,
+#login_form textarea {
     border: none;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -995,14 +996,14 @@ clear: both;
     resize: none;
 }
 
-#login-form input {
+#login_form input {
     width: 10%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-#login-form .submit {
+#login_form .submit {
     background: #3C3F45!important;
     color: #23262C!important;
     cursor: pointer!important;
@@ -1021,12 +1022,12 @@ clear: both;
 		    transition: background 0.1s linear 0s, color 0.1s linear 0s;
 }
 
-#login-form .submit:hover {
+#login_form .submit:hover {
     background: #DE5E60!important;
     color: #FFFFFF!important;
 }
 
-#login-form button{
+#login_form button{
 	border:0;
 }
 

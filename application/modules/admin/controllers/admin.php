@@ -172,7 +172,7 @@ class Admin extends MY_Controller
 public function logout(){
 		$this ->session->sess_destroy();
 
-			redirect("/home/index");
+			redirect("/home");
 		
 		}
 	}

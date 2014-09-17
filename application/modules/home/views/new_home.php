@@ -1,5 +1,7 @@
 <?php 
-// echo "<pre>";print_r($this->session->all_userdata());echo "</pre>";exit;
+// echo "<pre>";print_r($this->session->all_userdata());echo "</pre>";
+// echo "<pre> Extra: ";print_r($this->session->userdata('user_data'));echo "</pre>";
+// exit;
  ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
 <!-- Meta Tags -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>Philosophical Anthropology | Human Sexuality and Freedom</title>   
+<title>Philosophical Anthropology|Human Sexuality and Freedom</title>   
 
 <meta name="description" content="Insert Your Site Description" /> 
 
@@ -40,6 +42,7 @@
 
 <!-- Font Icons -->
 <link href="<?php echo base_url() . 'assets/_include/css/fonts.css'?>" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate.css">
 
 <!-- Shortcodes -->
 <link href="<?php echo base_url() . 'assets/_include/css/shortcodes.css'?>" rel="stylesheet">
@@ -125,11 +128,22 @@
         <nav id="menu">
         	<ul id="menu-nav">
             	<li class="current"><a href="#home-slider">Home</a></li>
-                <li><a href="#work">Our Work</a></li>
+                <li><a href="#work">Content</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
-				<li><a href="shortcodes.html" class="external">Shortcodes</a></li>
+				<!-- <li><a href="shortcodes.html" class="external">Shortcodes</a></li> -->
+
             </ul>
+            <div class="align_right">
+            <?php 
+                if (($this->session->userdata('user_data') != null)) {
+                    echo '<p>You are logged in as: '.$this->session->userdata('user_data').' <a href="home/logout"> Logout </a> </p>';
+                }else{
+                    echo '<p>You are not logged in. <a id="login_show"> Login/Register </a></p>';
+                }
+             ?>
+               
+            </div>
         </nav>
         
     </div>
@@ -138,8 +152,10 @@
 
 <!-- Our Work Section -->
 <div id="work" class="page">
+        
+<div>
         <?php
-        $attr = array('id'=>'login-form');
+        $attr = array('id'=>'login_form' ,'class'=>'animated display-none');
          echo form_open('home/login',$attr); ?>
             <input type="text" name="username" placeholder="Username/Email"> 
             <input type="password" name="password" placeholder = "Password">
@@ -150,6 +166,7 @@
         </div>
              <a class="clear" id="member_register" href="<?php echo base_url();?>home/reg_home">Not a Member? Register here</a>
         <?php echo form_close();?>
+</div>
     	<!-- Title Page -->
         <div class="row">
             <div class="span12">
@@ -190,7 +207,7 @@
                                     <span class="overlay-img-thumb font-icon-plus"></span>
                                 </a>
                                 <!-- Thumb Image and Description -->
-                                <img src="<?php echo base_url() ?>assets/_include/img/work/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                                <img src="<?php echo base_url() ?>assets/_include/img/work/thumbs/image-01.png" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                             </li>
                         	<!-- End Item Project -->
                         
@@ -507,6 +524,7 @@
 <!--<script src="<?php //echo base_url() . 'assets/_include/js/jquery.tweet.js'?>"></script> <!-- Tweet -->
 <script src="<?php echo base_url() . 'assets/_include/js/plugins.js'?>"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
 <script src="<?php echo base_url() . 'assets/_include/js/main.js'?>"></script> <!-- Default JS -->
+
 <!-- End Js -->
 
 </body>
