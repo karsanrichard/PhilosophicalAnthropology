@@ -1,4 +1,11 @@
-<?php echo "<pre>";print_r($mail);echo "</pre>";exit; ?>
+<?php //echo "<pre>";print_r($mail);echo "</pre>";exit; ?>
+<?php 
+//echo "<pre>";print_r($this->session->all_userdata());echo "</pre>"; echo $this->session->userdata('login_info');exit; 
+$fname = $this->session->userdata('fname');
+$names = $this->session->userdata('fname').' '.$this->session->userdata('lname');
+$email = $this->session->userdata('email');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -241,15 +248,15 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                                 <span><?php echo $names; ?> <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                                     <p>
-                                        Jane Doe - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                       <?php echo $names;  ?> - Site Administrator
+                                        <small>Email: <?php echo $email ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -290,7 +297,7 @@
                             <img src="<?php echo base_url().'assets/images/img/avatar3.png'?>" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hello, <?php echo $fname; ?></p>
 
                             <a href="#"><i class="glyphicon glyphicon-ok-circle text-success"></i> Online</a>
                         </div>
