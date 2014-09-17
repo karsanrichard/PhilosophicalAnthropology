@@ -294,11 +294,11 @@
         	<div class="image-wrap">
                 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb">BIF II Yr Student</span>
+                    <span class="overlay-text-thumb">Otaalo John Chrispine </span>
                 </div>
                 <img src="<?php echo base_url() ?>assets/_include/img/profile/profile-01.jpg" alt="John Chrispine Otaalo">
             </div>
-            <h3 class="profile-name">John Chrispine Otaalo</h3>
+            <h3 class="profile-name">Otaalo John Chrispine</h3>
             <p class="profile-description">
             Having passed DBIT with a distinction,this magnanimous character played an immense role in the making of this system. He is a skilled individual with a dedication to his work and a keen eye to detail.
             <div class="social">
@@ -317,7 +317,7 @@
         	<div class="image-wrap">
                 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb">BIF II Yr Student</span>
+                    <span class="overlay-text-thumb">Karsan Richard Seth</span>
                 </div>
                 <img src="<?php echo base_url() ?>assets/_include/img/profile/profile-02.jpg" alt="Karsan Richard Seth">
             </div>
@@ -340,11 +340,11 @@
         	<div class="image-wrap">
                 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb">BIF II Yr Student</span>
+                    <span class="overlay-text-thumb">Bakasa Joshua Nyeole</span>
                 </div>
                 <img src="<?php echo base_url() ?>assets/_include/img/profile/profile-03.jpg" alt="Joshua Nyeole Bakasa">
             </div>
-            <h3 class="profile-name">Joshua Nyeole Bakasa</h3>
+            <h3 class="profile-name">Bakasa Joshua Nyeole </h3>
             <p class="profile-description">
             Joshua Bakasa was a crucial part of the making of this beautiful system,he took part in the making of fundamentals in the system and knows his way with words. If code had a human entity,it would be Joshua. 
             <div class="social">
@@ -375,13 +375,14 @@
                     <span class="overlay-img"></span>
                     <span class="overlay-text-thumb">Catherine Dean</span>
                 </div>
-                <img src="<?php echo base_url() ?>assets/_include/img/profile/profile-03.jpg" alt="Joshua Nyeole Bakasa">
+                <img src="<?php echo base_url() ?>assets/_include/img/profile/profile-06.jpg" alt="Joshua Nyeole Bakasa">
         </div>
             </div>
             <h3 class="profile-name margin_left">Catherine Dean</h3>
             <h4>Philosophical Anthropology Lecturer</h4>
             <p class="profile-description margin_left">
-            Mrs Catherine Dean was the inspiration towards the making of this system. 
+            Mrs Catherine Dean,a teacher of Philosophical Anthropology,was the inspiration towards the making of this system. 
+            Her vibrance and interesting delivery of information has taught us alot and impacted many of our lives in various ways. We would like to thank her abundantly and to urge her to continue teaching and changing the lives of many.
             <div class="social">
                 <ul class="social-icons">
                     <li><a href="#"><i class="font-icon-social-twitter"></i></a></li>
