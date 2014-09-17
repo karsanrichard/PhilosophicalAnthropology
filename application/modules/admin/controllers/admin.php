@@ -59,7 +59,8 @@ class Admin extends MY_Controller
 
 	function users()
 	{
-		$data['instructors'] = $this->admin_model->get_instructors();
+		$data['logs'] = $this->admin_model->get_logs();
+		
 		$this->load->view('users_view', $data);
 	}
 

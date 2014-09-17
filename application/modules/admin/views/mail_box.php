@@ -1,3 +1,4 @@
+<?php echo "<pre>";print_r($mail);echo "</pre>";exit; ?>
 <!DOCTYPE html>
 <html>
     <head>

@@ -389,61 +389,35 @@
                                 <?php 
                                     // print_r($instructors); die();
 
-                                    if ($instructors != NULL) {
+                                    if ($logs != NULL) {
                                 ?>
                                     <div class="table-responsive">
                                         <table style="font-size:90%" id="" class="table table-bordered table-responsive">
                                             <thead>
                                                 <tr>
                                                     <td rowspan="2"><center>#</center></td>
-                                                    <td rowspan="2"><center>First Name</center></td>
-                                                    <td rowspan="2"><center>Second Name</center></td>
-                                                    <td rowspan="2"><center>Institution</center></td>
-                                                    <td rowspan="2"><center>Location</center></td>
-                                                    <td rowspan="2"><center>Email</center></td>
-                                                    <td rowspan="2"><center>Telephone</center></td>
-                                                    <td colspan="2"><center>Actions</center></td>
+                                                    <td rowspan="2"><center>Username</center></td>
+                                                    <td rowspan="2"><center>Users Email</center></td>
+                                                    <td rowspan="2"><center>Type of user</center></td>
+                                                    <td rowspan="2"><center>Time of Logging In</center></td>
+                                                  
                                                 </tr>
-                                                <tr>
-                                                    <td><center>Status</center></td>
-                                                    <td><center>Edit</center></td>
-                                                </tr>
+                                                
                                             </thead>
                                             <tbody class="">
                                                 <?php
                                                     $i=1;
                                                     // print_r($instructors); die();
-                                                    foreach ($instructors as $values) {
+                                                    foreach ($logs as $values) {
                                                 ?>  
                                                     <tr>
                                                         <td><?php echo $i; ?></td>
-                                                        <td><?php echo $values['first_name']; ?></td>
-                                                        <td><?php echo $values['second_name']; ?></td>
-                                                        <td><?php echo $values['institution']; ?></td>
-                                                        <td><?php echo $values['location']; ?></td>
-                                                        <td><?php echo $values['email']; ?></td>
-                                                        <td><?php echo $values['phone']; ?></td>
-
-                                                        <?php
-                                                            if ($values['status'] == 1) {
-                                                                $class = "glyphicon glyphicon-ok-sign";
-                                                                $color = "#34AE11";
-                                                             } else if ($values['status'] == 2) {
-                                                                $class = "glyphicon glyphicon-remove-sign";
-                                                                $color = "#F13A3A";
-                                                             }
-                                                              
-                                                        ?>
-                                                        <td>
-                                                            <center>
-                                                            <span class="<?php echo $class;?>" style="color: <?php echo $color; ?>" ></span>
-                                                            </center>
-                                                        </td>
-                                                        <td>
-                                                            <center>
-                                                            <a href="javascript:void(null);" onclick="edit_instructor(<?php echo $values['id'];?>,'<?php echo $values['first_name'];?>','<?php echo $values['second_name'];?>','<?php echo $values['institution'];?>','<?php echo $values['location'];?>','<?php echo $values['email'];?>','<?php echo $values['phone'];?>','<?php echo $values['status'];?>')"><span class="glyphicon glyphicon-pencil" style="color: #70D3E9;"></span></a>
-                                                            </center>
-                                                        </td>
+                                                        <td><?php echo $values['user_name']; ?></td>
+                                                        <td><?php echo $values['user_email']; ?></td>
+                                                        <td><?php echo $values['user_type']; ?></td>
+                                                        <td><?php echo $values['logged_in_at']; ?></td>
+                                                        
+                                                        
                                                     </tr>   
                                                 <?php
                                                     $i++;
@@ -460,22 +434,15 @@
                                         <table style="font-size:90%" id="" class="table table-bordered table-responsive">
                                             <thead>
                                                 <tr>
-                                                    <td rowspan="2">#</td>
-                                                    <td rowspan="2">First Name</td>
-                                                    <td rowspan="2">Second Name</td>
-                                                    <td rowspan="2">Institution</td>
-                                                    <td rowspan="2">Location</td>
-                                                    <td rowspan="2">Email</td>
-                                                    <td rowspan="2">Telephone</td>
-                                                    <td colspan="2">Actions</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Status</td>
-                                                    <td>Edit</td>
+                                                    <td rowspan="2"><center>#</center></td>
+                                                    <td rowspan="2"><center>Username</center></td>
+                                                    <td rowspan="2"><center>Users Email</center></td>
+                                                    <td rowspan="2"><center>Type of user</center></td>
+                                                    <td rowspan="2"><center>Time of Logging In</center></td>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <td colspan="9"><center> No data available in this table...</center></td>
+                                                <td colspan="5"><center> No data available in this table...</center></td>
                                             </tbody>
                                         </table>
                                     </div>

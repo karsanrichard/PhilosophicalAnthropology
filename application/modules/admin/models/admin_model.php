@@ -116,6 +116,23 @@ class Admin_model extends MY_Model
 		return $errors->result_array();
 	}
 
+	public function get_logs()
+	{
+		$sql = "SELECT
+						`logs`.`user_id`,
+						`logs`.`user_email`,
+						`logs`.`logged_in_at`,
+						`users`.`user_name`,
+						`users`.`user_type`,
+						`users`.`id`
+					FROM `logs`
+						LEFT JOIN `users`
+							ON `logs`.`user_id` = `users`.`id`";
+		$logs = $this->db->query($sql);
+
+		return $logs->result_array();
+	}
+
 	public function add_Instructors($default_password)
 	{
 		
