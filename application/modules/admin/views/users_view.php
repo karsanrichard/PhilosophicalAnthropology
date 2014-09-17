@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Admin | Members</title>
+        <title>Admin | Users</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="<?php echo base_url().'assets/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet" type="text/css" />
@@ -316,16 +316,19 @@
                                 <i class="fa fa-mortar-board"></i> <span>Instructors</span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="<?php echo base_url(). 'admin/members'?>">
                                 <i class="fa fa-users"></i><span>Members</span>   
                             </a>
                         </li>
-                        <li >
+                        <li  class="active">
                             <a href="<?php echo base_url(). 'admin/users'?>">
                                 <i class="fa fa-user"></i> <span>Users</span>
+                               
                             </a>
+                            
                         </li>
+                        
                         <li>
                             <a href="<?php echo base_url().'admin/mail_box' ?>">
                                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
@@ -347,12 +350,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Members Details
+                        Instructors` Details
                         <small>Control panel</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Members</li>
+                        <li class="active">Instructors</li>
                     </ol>
                 </section>
 
@@ -373,7 +376,7 @@
                             <div class="box box-solid ">
                                 <div class="box-header">
                                     <i class="ion ion-person-add"></i>
-                                    <h3 class="box-title">Members Information</h3>
+                                    <h3 class="box-title">Instructors Information</h3>
                                     <!-- tools box -->
                                     <div class="pull-right box-tools">
                                         <!-- button with a dropdown -->
@@ -383,106 +386,103 @@
                                     </div><!-- /. tools -->
                                 </div><!-- /.box-header -->
                                 <div class="box-body yes-padding">
-                                <?php
-                                    if ($members != null) {
-                                        
+                                <?php 
+                                    // print_r($instructors); die();
+
+                                    if ($instructors != NULL) {
                                 ?>
                                     <div class="table-responsive">
-                                        <table style="font-size:100%" id="" class="table table-bordered table-responsive">
-                                        <thead>
-                                            <tr>
-                                               <td rowspan="2">#</td>
-                                                <td rowspan="2">First Name</td>
-                                                <td rowspan="2">Second Name</td>
-                                                <td rowspan="2">Other Name</td>
-                                                <td rowspan="2">Email</td>
-                                                <td rowspan="2">Status</td>
-                                                <td colspan="2">Action</td>
-                                            </tr>
-                                             <tr>
-                                                <td>Deactivate</td>
-                                                <td>Edit</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                            $i=1;
-                                            foreach ($members as $value) {
-                                                // print_r($value); 
-                                                $value['id'];
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $i; ?></td>
-                                                <td><?php echo $value['fname']; ?></td>
-                                                <td><?php echo $value['sname']; ?></td>
-                                                <td><?php echo $value['onames']; ?></td>
-                                                <td><?php echo $value['email']; ?></td>
-                                            <?php
-                                                if ($value['status'] == 1) {
-                                                    $class = "glyphicon glyphicon-ok-sign";
-                                                    $color = "#34AE11";
-                                                 } else if ($value['status'] == 2) {
-                                                    $class = "glyphicon glyphicon-remove-sign";
-                                                    $color = "#F13A3A";
-                                                 }
-                                                  
-                                            ?>
-                                                <td>
-                                                    <center>
-                                                        <span class="<?php echo $class;?>" style="color: <?php echo $color; ?>" ></span>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <span class="glyphicon glyphicon-remove-sign" style="color:#F13A3A;" ></span>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                   <center>
-                                                        <a href="javascript:void(null);" onclick="edit_member(<?php echo $value['id'];?>,'<?php echo $value['fname'];?>','<?php echo $value['sname'];?>','<?php echo $value['onames'];?>','<?php echo $value['email'];?>','<?php echo $value['status'];?>')"><span class="glyphicon glyphicon-pencil" style="color: #70D3E9;"></span></a>
-                                                    </center>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                           $i++;
-                                            }
-                                        ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <?php
+                                        <table style="font-size:90%" id="" class="table table-bordered table-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <td rowspan="2"><center>#</center></td>
+                                                    <td rowspan="2"><center>First Name</center></td>
+                                                    <td rowspan="2"><center>Second Name</center></td>
+                                                    <td rowspan="2"><center>Institution</center></td>
+                                                    <td rowspan="2"><center>Location</center></td>
+                                                    <td rowspan="2"><center>Email</center></td>
+                                                    <td rowspan="2"><center>Telephone</center></td>
+                                                    <td colspan="2"><center>Actions</center></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><center>Status</center></td>
+                                                    <td><center>Edit</center></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="">
+                                                <?php
+                                                    $i=1;
+                                                    // print_r($instructors); die();
+                                                    foreach ($instructors as $values) {
+                                                ?>  
+                                                    <tr>
+                                                        <td><?php echo $i; ?></td>
+                                                        <td><?php echo $values['first_name']; ?></td>
+                                                        <td><?php echo $values['second_name']; ?></td>
+                                                        <td><?php echo $values['institution']; ?></td>
+                                                        <td><?php echo $values['location']; ?></td>
+                                                        <td><?php echo $values['email']; ?></td>
+                                                        <td><?php echo $values['phone']; ?></td>
+
+                                                        <?php
+                                                            if ($values['status'] == 1) {
+                                                                $class = "glyphicon glyphicon-ok-sign";
+                                                                $color = "#34AE11";
+                                                             } else if ($values['status'] == 2) {
+                                                                $class = "glyphicon glyphicon-remove-sign";
+                                                                $color = "#F13A3A";
+                                                             }
+                                                              
+                                                        ?>
+                                                        <td>
+                                                            <center>
+                                                            <span class="<?php echo $class;?>" style="color: <?php echo $color; ?>" ></span>
+                                                            </center>
+                                                        </td>
+                                                        <td>
+                                                            <center>
+                                                            <a href="javascript:void(null);" onclick="edit_instructor(<?php echo $values['id'];?>,'<?php echo $values['first_name'];?>','<?php echo $values['second_name'];?>','<?php echo $values['institution'];?>','<?php echo $values['location'];?>','<?php echo $values['email'];?>','<?php echo $values['phone'];?>','<?php echo $values['status'];?>')"><span class="glyphicon glyphicon-pencil" style="color: #70D3E9;"></span></a>
+                                                            </center>
+                                                        </td>
+                                                    </tr>   
+                                                <?php
+                                                    $i++;
+                                                    }
+                                                ?>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php 
                                     } else {
                                 ?>
-                                <div class="table-responsive">
-                                    <table style="font-size:100%" id="" class="table table-bordered table-responsive">
-                                        <thead>
-                                            <tr>
-                                                <td rowspan="2">#</td>
-                                                <td rowspan="2">First Name</td>
-                                                <td rowspan="2">Second Name</td>
-                                                <td rowspan="2">Other Name</td>
-                                                <td rowspan="2">Email</td>
-                                                <td rowspan="2">Status</td>
-                                                <td colspan="2">Action</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="8">No data in this table....</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <?php
+                                    <div  class="table-responsive">
+                                        <table style="font-size:90%" id="" class="table table-bordered table-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <td rowspan="2">#</td>
+                                                    <td rowspan="2">First Name</td>
+                                                    <td rowspan="2">Second Name</td>
+                                                    <td rowspan="2">Institution</td>
+                                                    <td rowspan="2">Location</td>
+                                                    <td rowspan="2">Email</td>
+                                                    <td rowspan="2">Telephone</td>
+                                                    <td colspan="2">Actions</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Status</td>
+                                                    <td>Edit</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <td colspan="9"><center> No data available in this table...</center></td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php       
                                     }
-                                    
-                                ?>
-                                    
+                                ?>  
+                                                
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->                            
 
@@ -497,47 +497,8 @@
 
         <!-- add new calendar event modal -->
 
-        <div class="modal fade" id="editmemberdiv">
-            <div class="modal-dialog" style="width:60%;margin-bottom:2px;">
-                <div class="modal-content" >
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h5 class="modal-title">Edit Instructor</h5>
-                    </div>
-                    <div class="modal-body" style="padding-bottom:0px;">    
-                    <?php echo form_open(base_url().'admin/edit_instructor'); ?>
-                        <input type="hidden" id="editid" name="editid" />
-                        <div class="input-group" style="width: 100%;padding:4px;">
-                                <span class="input-group-addon" style="width: 40%;"> First Name:</span>
-                                <input id="editfname" name="editfname" class="textfield form-control" />    
-                        </div>
-                        <div class="input-group" style="width: 100%;padding:4px;">
-                                <span class="input-group-addon" style="width: 40%;"> Second Name:</span>
-                                <input id="editsname" name="editsname" class="textfield form-control" />    
-                        </div>
-                        <div class="input-group" style="width: 100%;padding:4px;">
-                                <span class="input-group-addon" style="width: 40%;"> Other Name:</span>
-                                <input id="editonames" name="editonames" class="textfield form-control" /> 
-                        </div>
-                        
-                        <div class="input-group" style="width: 100%;padding:4px;">
-                                <span class="input-group-addon" style="width: 40%;"> email:</span>
-                                <input id="editemail" name="email" class="textfield form-control" />    
-                        </div>
-                        
-                        <div class="input-group" style="width: 100%;padding:4px;">
-                            <span class="input-group-addon" style="width: 40%;"> Status :</span>
-                            <span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="1">  Active  <span style="font-size: 1.4em;color: #3e8f3e;" class="glyphicon glyphicon-ok-sign"></span></input></span>
-                            <span class="input-group-addon" style="width: 30%;"><input type="radio" name="editstatus" value="2">  Deactivate <span style="font-size: 1.4em;color: #eb9316;" class="glyphicon glyphicon-remove-sign"></span></input></span>
-                        </div>              
-                        <div class="modal-footer" style="height:11px;padding-top:11px;">
-                            <?php echo $this->config->item("copyrights");?>
-                        </div> 
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+   
+
 
 
         <!-- jQuery 2.0.2 -->
@@ -575,30 +536,41 @@
         <script src="<?php echo base_url().'assets/js/admin/demo.js'?>" type="text/javascript"></script>
 
         <script type="text/javascript">
-        function edit_member (id,fname,sname,onames,email,status) {
-            // alert(id);
+        function add_instructor () {
+            $("#addinstructor").modal("show");
+        }
+
+      
+        }
+
+        function edit_instructor(id,fname,sname,institution,location,email,phone,status){
+
             var str = "#tr_"+id;
 
             var row = $(str).html();
 
             $("#edit_table_details").html(row);
 
-            $("#editid").val(id);
+            $("#editfacilityid").val(id);
             $("#editfname").val(fname);
             $("#editsname").val(sname);
-            $("#editonames").val(onames);
+            $("#editinst").val(institution);
+            $("#editlocal").val(location);
             $("#editemail").val(email);
-            
+            $("#editphone").val(phone);
                 
 
 
             $('input[name=editstatus][value=1]').prop('checked', false);
             $('input[name=editstatus][value=2]').prop('checked', false);
             
+
             $('input[name=editstatus][value='+status+']').prop('checked', true);
 
 
-            $('#editmemberdiv').modal('show');
+                
+            $("#instructordiv").modal("show");
+
         }
         </script>
 

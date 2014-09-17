@@ -322,7 +322,7 @@
                             </a>
                         </li>
                         <li >
-                            <a href="#">
+                            <a href="<?php echo base_url(). 'admin/users'?>">
                                 <i class="fa fa-user"></i> <span>Users</span>
                                
                             </a>
@@ -381,15 +381,15 @@
                                             <div style="margin-top: 15px;">
                                                 <ul class="nav nav-pills nav-stacked">
                                                     <li class="header">Folders</li>
-                                                    <li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox (14)</a></li>
+                                                    <li class="active"><a href="" onclick="toggle_div('errorsDiv');"><i class="fa fa-inbox"></i> Inbox (14)</a></li>
                                                     <li><a href="#"><i class="fa fa-pencil-square-o"></i> Drafts</a></li>
-                                                    <li><a href="#"><i class="fa fa-mail-forward"></i> Sent</a></li>
+                                                    <li><a href="" onclick="toggle_div('sentDiv');"><i class="fa fa-mail-forward"></i> Sent</a></li>
                                                     <li><a href="#"><i class="fa fa-star"></i> Starred</a></li>
                                                     <li><a href="#"><i class="fa fa-folder"></i> Junk</a></li>
                                                 </ul>
                                             </div>
                                         </div><!-- /.col (LEFT) -->
-                                        <div class="col-md-9 col-sm-8" id="errorsDiv">
+                                        <div class="col-md-9 col-sm-8" id="errorsDiv" style="display: block;">
                                             <div class="row pad">
                                                 <div class="col-sm-6">
                                                     <label style="margin-right: 10px;">
@@ -432,7 +432,7 @@
                                                 <table class="table table-mailbox">
                                                 <?php
                                                     foreach ($inbox as $value) {
-                                                        $i=1;
+                                                        
                                                         if ($value['looked_at'] == 0) {
                                                             $class = "unread";
                                                         } else if ($value['looked_at'] == 1) {
@@ -447,10 +447,72 @@
                                                         <td class="time"><?php echo $value['date']; ?></td>
                                                     </tr>
                                                 <?php   
-                                                    $i++;    
+                                                    
                                                     }
                                                 ?>
                                                     
+                                                </table>
+                                            </div><!-- /.table-responsive -->
+                                        </div><!-- /.col (RIGHT) -->
+
+                                        <div class="col-md-9 col-sm-8" id="sentDiv" style="display: none;">
+                                            <div class="row pad">
+                                                <div class="col-sm-6">
+                                                    <label style="margin-right: 10px;">
+                                                        <input type="checkbox" id="check-all"/>
+                                                    </label>
+                                                    <!-- Action button -->
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default btn-sm btn-flat dropdown-toggle" data-toggle="dropdown">
+                                                            Action <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Mark as read</a></li>
+                                                            <li><a href="#">Mark as unread</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Move to junk</a></li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="#">Delete</a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-6 search-form">
+                                                    <form action="#" class="text-right">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control input-sm" placeholder="Search">
+                                                            <div class="input-group-btn">
+                                                                <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.row -->
+
+                                            <div class="table-responsive">
+                                                <!-- THE EMAILS -->
+                                                <?php
+                                                    //print_r($inbox); die();
+
+                                                ?>
+                                                <table class="table table-mailbox">
+                                                <?php
+                                                    foreach ($mails as $value) {
+                                                       
+                                                        
+                                                ?>
+                                                        <tr class="<?php echo $class; ?>">
+                                                        <td class="small-col"><input type="checkbox" /></td>
+                                                        <td class="small-col"><i class="fa fa-star"></i></td>
+                                                        <td class="name"><a href="#"><?php echo $value['recipients']; ?></a></td>
+                                                        <td class="subject"><a href="#"><?php echo $value['subject'] ?></a></td>
+                                                        <td class="time"><?php echo $value['date']; ?></td>
+                                                    </tr>
+                                                <?php   
+                                                    
+                                                    }
+                                                ?>
+                                                  
                                                 </table>
                                             </div><!-- /.table-responsive -->
                                         </div><!-- /.col (RIGHT) -->
@@ -554,8 +616,6 @@
 
         <!-- Admin for demo purposes -->
         <script src="<?php echo base_url().'assets/js/admin/demo.js'?>" type="text/javascript"></script>
-
-       
-
+    
     </body>
 </html>

@@ -50,10 +50,17 @@ class Admin extends MY_Controller
 
 	public function mail_box($value='')
 	{
-		$data['mails'] = $this->admin_model->get_members();
-		$data['inbox'] = $this->admin_model->errors();
+		$data['mails'] 	 = $this->admin_model->get_mails();
+		$data['inbox'] 	 = $this->admin_model->errors();
+		$data['deleted'] = $this->admin_model->deleted_errors();
 		
 		$this->load->view('mail_box', $data);
+	}
+
+	function users()
+	{
+		$data['instructors'] = $this->admin_model->get_instructors();
+		$this->load->view('users_view', $data);
 	}
 
 	

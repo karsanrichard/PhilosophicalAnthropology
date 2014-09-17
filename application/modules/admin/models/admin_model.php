@@ -54,7 +54,7 @@ class Admin_model extends MY_Model
 	public function get_mails()
 	{
 		$sql = "SELECT 
-						`recepients`,
+						`recipients`,
 						`subject`,
 						`message`,
 						`date`
@@ -74,6 +74,7 @@ class Admin_model extends MY_Model
 						`ERR`.`user_id`,
 						`ERR`.`date`,
 						`ERR`.`looked_at`,
+						`ERR`.`status`,
 						`USS`.`id`,
 						`USS`.`user_name`
 
@@ -82,7 +83,33 @@ class Admin_model extends MY_Model
 					LEFT JOIN 
 								`users` AS `USS`
 						ON 
-								`ERR`.`user_id` = `USS`.`id`";
+								`ERR`.`user_id` = `USS`.`id`
+				WHERE `ERR`.`status` = 1";
+
+		$errors = $this->db->query($sql);
+
+		return $errors->result_array();
+	}
+
+	public function deleted_errors()
+	{
+		$sql = "SELECT
+						`ERR`.`subject`,
+						`ERR`.`message`,
+						`ERR`.`user_id`,
+						`ERR`.`date`,
+						`ERR`.`looked_at`,
+						`ERR`.`status`,
+						`USS`.`id`,
+						`USS`.`user_name`
+
+				FROM
+						`error_reports` AS `ERR`
+					LEFT JOIN 
+								`users` AS `USS`
+						ON 
+								`ERR`.`user_id` = `USS`.`id`
+				WHERE `ERR`.`status` = 0";
 
 		$errors = $this->db->query($sql);
 

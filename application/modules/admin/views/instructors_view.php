@@ -321,8 +321,8 @@
                                 <i class="fa fa-users"></i><span>Members</span>   
                             </a>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
+                        <li>
+                            <a href="<?php echo base_url(). 'admin/users'?>">
                                 <i class="fa fa-user"></i> <span>Users</span>
                                
                             </a>
@@ -373,7 +373,7 @@
                         <section class="col-lg-11 connectedSortable">                            
 
                             <!-- Calendar -->
-                            <div class="box box-solid bg-blue-gradient">
+                            <div class="box box-solid ">
                                 <div class="box-header">
                                     <i class="ion ion-person-add"></i>
                                     <h3 class="box-title">Instructors Information</h3>
