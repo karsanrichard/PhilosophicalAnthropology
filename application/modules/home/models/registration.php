@@ -37,12 +37,15 @@ class Registration extends MY_Model {
         //echo $login_msg;exit;
         $user_email = $email;
             $newdata = array(
-                   'username'  => $user_name,
-                   'email'     => $user_email,
-                   'login_status' => 'TRUE',
-                   'user_data' => $user_name,
-                   'login_info' => $login_msg,
-                   'full_name' => $full_name
+               'fname' => $fname,
+               'lname' => $sname,
+               'full_name' => $fname . ' ' . $lname,
+               'username'  => $user_name,
+               'email'     => $user_email,
+               'login_status' => 'TRUE',
+               'user_data' => $user_name,
+               'login_info' => $login_msg,
+               'full_name' => $full_name
 
                );
 
@@ -52,7 +55,7 @@ class Registration extends MY_Model {
             echo "REGISTRATION ERROR";exit;
         };
 
-        redirect('home/index');
+        redirect('home');
         /*
         
         */
